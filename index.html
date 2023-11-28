@@ -20,8 +20,30 @@
         <div class="nav">
             <h1>Красота и комфорт <br>
                 Уютно, как дома</h1>
-                <input class="button" type="button" value=" Забронировать ">
+                <input class="open-modal-btn" type="button" value=" Забронировать ">
         </div>
+        <div class="modal-overlay">
+            <div class="modal">
+                <div class="ztitle">
+                    <h2>Забронировать </h2>
+                    <h3>номер</h3> 
+                </div>
+                <img src="img/icon_phone.png" height="50" alt="icon_phone">
+                <h4>Заполните форму и наш оператор <br>с вами свяжется в ближайшее время</h4>                            
+              <form id="contact-form">
+                <div>
+                  <label for="name">Ваше <br>имя:</label>
+                  <input type="text" id="name" required>
+                </div>
+                <div>
+                  <label for="phone">Номер телефона:</label>
+                  <input type="tel" id="phone" required>
+                </div>
+                <button type="submit">Связаться с оператором</button>
+              </form>
+              <button class="close-modal-btn">&#10006;</button>
+            </div>
+          </div>
     </header>
     <main>
         <div>
@@ -72,20 +94,64 @@
             <ul class="produce_frame_top">
                 <li class="produce_about">
                     <img src="img/hotel_room_1.png" height="250" alt="hotel_room_1" >
-                    <h4 class="center">Номер с прекрасным видом</h4>
+                    <h4 class="center">Номер с прекрасным видом <br>Премиум</h4>
                 </li>
                 <li class="produce_about">
                    <img src="img/hotel_room_2.png" height="250" alt="hotel_room_2" >
-                   <h4 class="center">Роскошный номер</h4>
+                   <h4 class="center">Роскошный номер <br>Люкс</h4>
                 </li>
                 <li class="produce_about">
                   <img src="img/hotel_room_3.png" height="250" alt="hotel_room_3" >
-                  <h4 class="center">Бизнес класс</h4> 
+                  <h4 class="center">Стандартный <br>Бизнес класс</h4> 
                 </li>
                 <li class="produce_about">
                    <img src="img/hotel_room_4.png" height="250" alt="hotel_room_4" >
                    <h4 class="center">Минимализм <br>
-                    (эконом вариант)</h4> 
+                    Эконом вариант</h4> 
+                </li>
+            </ul>
+        </section>
+        <section>
+            <ul class="produce_frame_top">
+                <li class="produce_about">
+                    <img src="img/icon_inform_1.png" height="60" width="60" alt="icon_inform_1" >
+                    <h4 class="center">РЕСТОРАН</h4>
+                    <p>Уютный интерьер и изысканная кухня 
+                        сделают ваш обед или ужин незабываемым. <br>
+                        Мы рады нашим гостям и всегда стремимся 
+                        их приятно удивить.</p>
+                </li>
+                <li class="produce_about">
+                   <img src="img/icon_inform_2.png" height="60" width="60" alt="icon_inform_2" >
+                   <h4 class="center">СПА-КОМПЛЕКС</h4>
+                   <p>Прекрасное место, <br>
+                    чтобы наслаждаться каждым моментом,
+                    оставить в стороне 
+                    любые тревоги и стрессы, <br>
+                    достичь гармонии с окружающим
+                     миром и самим собой.</p>
+                </li>
+                <li class="produce_about">
+                  <img src="img/icon_inform_3.png" height="60" width="60" alt="icon_inform_3" >
+                  <h4 class="center">ЛУЧШИЕ НОМЕРА</h4> 
+                  <p> Уникальный опыт проживания, <br>s
+                    который сочетает в себе комфорт, <br>
+                    роскошь и высокий уровень сервиса. </p>
+                    <p>Каждый номер оснащен: </p>
+                    <p class="list">
+                    > удобной мебелью<br>
+                    > кондиционером <br>
+                    > мини холодильником <br>
+                    > ванной комнатой</p>
+                </li>
+                <li class="produce_about">
+                   <img src="img/icon_inform_4.png" height="60" width="60" alt="icon_inform_4" >
+                   <h4 class="center">ЛАУНЖ-БАР</h4> 
+                   <p>Служит полноценной зоной отдыха, 
+                    отделенной и изолированной <br>
+                    от других локаций. <br>
+                    Здесь звучит расслабляющая музыка, 
+                    организовано специальное приглушенное освещение. </p>
                 </li>
             </ul>
         </section>
@@ -105,7 +171,7 @@
                 <a class="nav__link" href="#">Часто задаваемые вопросы</a> 
             </div>
             <div>
-                <a class="nav__link" href="#">Все права защищены</a>
+                <h5> © Все права защищены</h5>
             </div>            
         </div>
         <div class="right">
@@ -114,5 +180,6 @@
             <a href="#"><img src="img/icon_YouTube.png" alt="YouTube"></a>
         </div>            
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
