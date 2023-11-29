@@ -9,12 +9,19 @@
     background: #433A28;
     }
   body {  background-color:#CEC2A8; }
-  .nav__link, h1 {
+  .nav_link, h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     color:#CEC2A8;
     text-decoration: none;
   }
+  .nav_link_active { 
+    text-decoration:underline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color:#CEC2A8;
+    }
+  a {font-size: 18px;}
   a:hover { transform: scale(120%)}
   div {
     display: flex;
@@ -43,14 +50,11 @@
       font-size: 24px;
       color: #292929;
   }
-  h5 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 18px;
-      color: #CEC2A8;
-  }
   p {
     color: #292929;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
   }
   .ztitle {  /* Заголовок */
     display: flex;
@@ -142,6 +146,12 @@
   border: 1px solid #000;
   border-radius: 5px;
   padding: 5px;
+}
+input[type="text"]:focus {
+  outline: none;
+}
+input[type="tel"]:focus {
+  outline: none;
 }
 .modal form button {
   align-self: center;
@@ -249,6 +259,105 @@
       box-sizing: border-box;
       max-width: 500px;
       }
+.About_Us {
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+  .About_Us_text {
+  background-color: #433A28;
+  display: inline-block;
+  padding: 46px 250px 45px 100px;
+  }
+  .About_Us_text > h2 {
+  color: #CEC2A8;
+  border-bottom: 3px solid #795D1F;
+  padding-bottom: 40px;
+  }
+  .About_Us_text > p {
+    color: #CEC2A8;
+    line-height: 30px;
+  }
+  .about {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    border: 0;
+    border-radius: 27px;
+    color:#CEC2A8; 
+    background: #795D1F;
+    outline: none;
+    width: 215px;
+    height: 62px;
+    left: 1018px;
+    top: 211px;
+    margin: 20px;
+  }
+  .about:hover {
+    transform: scale(110%)
+}
+  .about:active {
+    background-color:#ccb070;
+    font-weight: 600;
+    color:#433A28;
+    transition: 0.1s;
+}
+.prod_frame_top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 20px;
+  padding: 0;
+  } 
+  .prod_about { 
+    display: flex;
+    flex-direction: column; 
+    padding: 30px 75px;
+    box-sizing: border-box;
+    max-width: 700px;
+    }
+    .prod_about > h4 { margin-bottom: 10px;}
+.mail_field { 
+  position: relative;
+  margin: 20px;
+}
+input[type="email"] {
+    background: rgba(166, 166, 166, 0.05);
+    align-self: center;
+    padding-right: 40px;
+    padding-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid #453E31;
+    border-radius: 10px;
+    color: #433A28;
+    width: 350px;
+    height: 62px;
+    left: 1018px;
+    top: 211px;
+    }
+    input[type="email"]:focus {
+      outline: none;
+    }
+    .mail_field > button {
+        align-self: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        border: 3px solid #433A28;
+        border-radius: 0 10px 10px 0;
+        color:#CEC2A8; 
+        background: #795D1F;
+        outline: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+    }
+    .mail_field > button:active {
+      background-color:#ccb070;
+      font-weight: 600;
+      color:#433A28;
+      transition: 0.1s;
+  }
       .produce_about > p { 
         max-width: 300px;
         margin-bottom: 0%;
@@ -271,7 +380,10 @@ footer {
   flex-direction: column;
   gap: 50px;
 }  
-.footer-inner h5 {
+.footer-inner p {
+  color: #CEC2A8;
+  line-height: 30px;
+  font-weight: 600;
   margin: 0;
 }
 .footer-inner div{

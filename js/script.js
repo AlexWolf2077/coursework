@@ -48,3 +48,19 @@ function closeModal() {
   modalOverlay.style.display = 'none';
   contactForm.reset();
 }
+/* поле ввода почты */
+document.getElementById("emailInput").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Предотвращаем отправку формы
+    clearEmail();
+  }
+});
+function clearEmail() {
+  var emailInput = document.getElementById("emailInput").value;
+  if (emailInput == '') {
+    alert('Пожалуйста, заполните поле формы.');
+    return;
+  }
+  document.getElementById("emailInput").value = "";
+  alert("Данные отправлены");
+}

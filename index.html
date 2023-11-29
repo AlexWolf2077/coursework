@@ -10,12 +10,12 @@
 <body>
     <header>
         <nav class="nav">
-            <a class="nav__link active" href="index.html"><img src="img/Logo_white.png" height="200" alt="лого"></a>
-            <a class="nav__link active" href="index.html">Главная</a>
-            <a class="nav__link" href="#">Услуги</a>            
-            <a class="nav__link" href="#">Номера</a>
-            <a class="nav__link" href="#">Контакты</a>
-            <a class="nav__link" href="#">О нас</a>
+            <a class="nav_link_active" href="index.html"><img src="img/Logo_white.png" height="200" alt="лого"></a>
+            <a class="nav_link_active" href="index.html">Главная</a>
+            <a class="nav_link" href="#">Услуги</a>            
+            <a class="nav_link" href="#">Номера</a>
+            <a class="nav_link" href="#">Контакты</a>
+            <a class="nav_link" href="#">О нас</a>
         </nav>
         <div class="nav">
             <h1>Красота и комфорт <br>
@@ -39,7 +39,7 @@
                   <label for="phone">Номер телефона:</label>
                   <input type="tel" id="phone" required>
                 </div>
-                <button type="submit">Связаться с оператором</button>
+                <button type="submit">Связаться <br>с оператором</button>
               </form>
               <button class="close-modal-btn">&#10006;</button>
             </div>
@@ -71,15 +71,15 @@
                     <ul class="technologies">
                         <li>
                             <div class="circle">1</div>
-                            <p>Обеспечьте себе лучший выбор комнаты</p>
+                            <h4>Обеспечьте себе лучший выбор комнаты</h4>
                         </li>
                         <li>
                             <div class="circle">2</div>
-                            <p>Низкая цена при лучшем качестве</p>
+                            <h4>Низкая цена при лучшем качестве</h4>
                         </li>
                         <li>
                             <div class="circle">3</div>
-                            <p>Ресторанное обслуживание</p>
+                            <h4>Ресторанное обслуживание</h4>
                         </li>                        
                     </ul> 
                 </div>
@@ -112,6 +112,45 @@
             </ul>
         </section>
         <section>
+            <div class="About_Us">
+                <div class="About_Us_text">
+                    <h2>О нас</h2>
+                    <p>Мы заботимся о комфорте наших гостей. </p>
+                    <p>В нашем отеле свой ресторан, спа-комплекс <br>
+                        и различные развлекательные зоны.</p>
+                    <p>Всё чтобы сделать ваш отпуск разнообразным, <br>
+                        наполненным и счастливым.</p>
+                        <input class="about" type="button" value=" Узнать больше ">
+                </div>
+                <div>
+                    <img src="img/restaurant.png" alt="restaurant"> 
+                </div>                                  
+            </div>
+        </section>
+        <section>
+                <ul class="prod_frame_top">
+                <li class="prod_about">
+                    <h4>ОТЛИЧНЫЕ <br>
+                        НОМЕРА И ИНТЕРЬЕР</h4>
+                    <img src="img/stars.png"  width="160" alt="stars" >
+                    <p>Положительные 5000+ отзывов</p>
+                </li>
+                <li class="prod_about">
+                    <h4 p class="center">Обратная связь</h4>
+                    <p class="center">Оставьте свою почту, чтобы мы могли присылать <br>
+                        вам уведомления о наших акциях.</p>
+                        <div class="mail_field">
+                            <input type="email" name="email" id="emailInput" placeholder="@ Введите адрес вашей почты" required>
+                            <button type="button" onclick="clearEmail()">Подписаться</button>
+                          </div>
+                </li>
+                <li class="prod_about">
+                  <img src="img/People.png"  alt="People" >
+                  <p>Люди отлично отзываются об отдыхе<br>
+                    в нашем отеле мечты</p>
+                </li>           
+        </section>
+        <section>
             <ul class="produce_frame_top">
                 <li class="produce_about">
                     <img src="img/icon_inform_1.png" height="60" width="60" alt="icon_inform_1" >
@@ -134,7 +173,7 @@
                 <li class="produce_about">
                   <img src="img/icon_inform_3.png" height="60" width="60" alt="icon_inform_3" >
                   <h4 class="center">ЛУЧШИЕ НОМЕРА</h4> 
-                  <p> Уникальный опыт проживания, <br>s
+                  <p> Уникальный опыт проживания, <br>
                     который сочетает в себе комфорт, <br>
                     роскошь и высокий уровень сервиса. </p>
                     <p>Каждый номер оснащен: </p>
@@ -159,19 +198,19 @@
     <footer>
         <div class="footer-inner">
             <div>
-                <a class="nav__link active" href="index.html">Главная</a>
-                <a class="nav__link" href="#">Услуги</a>            
-                <a class="nav__link" href="#">Номера</a>
-                <a class="nav__link" href="#">Контакты</a>
-                <a class="nav__link" href="#">О нас</a>
+                <a class="nav_link_active" href="index.html">Главная</a>
+                <a class="nav_link" href="#">Услуги</a>            
+                <a class="nav_link" href="#">Номера</a>
+                <a class="nav_link" href="#">Контакты</a>
+                <a class="nav_link" href="#">О нас</a>
             </div>
             <div  class="footer-i">
-                <a class="nav__link" href="#">Политика конфиденциальности</a>            
-                <a class="nav__link" href="#">Юридические договоры</a>
-                <a class="nav__link" href="#">Часто задаваемые вопросы</a> 
+                <a class="nav_link" href="#">Политика конфиденциальности</a>            
+                <a class="nav_link" href="#">Юридические договоры</a>
+                <a class="nav_link" href="#">Часто задаваемые вопросы</a> 
             </div>
             <div>
-                <h5> © Все права защищены</h5>
+                <p> © Все права защищены</p>
             </div>            
         </div>
         <div class="right">
