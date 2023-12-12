@@ -367,6 +367,27 @@ input[type="email"] {
     margin-top: 0%;
     margin-left: 20px;
   }
+  .hotel_rooms_text {
+    background-color: #433A28;
+    display: inline-block;
+    width: 700px;
+    padding: 50px;
+    border-radius: 5%;
+    }
+    .hotel_rooms_text > h2 {
+    color: #CEC2A8;
+    border-bottom: 3px solid #795D1F;
+    padding-bottom: 40px;
+    }
+    .hotel_rooms_text > p {
+      color: #CEC2A8;
+      line-height: 30px;
+    }
+    .hotel_rooms_img {
+      display: inline-block;
+      border-radius: 5%;
+      overflow: hidden;
+    }
 /* Подвал */
 footer {
     flex-direction: row;
