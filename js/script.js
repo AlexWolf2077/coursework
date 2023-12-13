@@ -64,3 +64,6 @@ function clearEmail() {
   document.getElementById("emailInput").value = "";
   alert("Данные отправлены");
 }
+function redirectToAboutPage() {
+  window.location.href = "about_us.html";
+}

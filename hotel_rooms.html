@@ -10,12 +10,12 @@
 <body>
     <header>
         <nav class="nav">
-            <a class="nav_link_active" href="index.html"><img src="img/Logo_white.png" height="200" alt="лого"></a>
+            <a class="nav_link" href="index.html"><img src="img/Logo_white.png" height="200" alt="лого"></a>
             <a class="nav_link" href="index.html">Главная</a>
             <a class="nav_link" href="#">Услуги</a>            
             <a class="nav_link_active" href="hotel_rooms.html">Номера</a>
             <a class="nav_link" href="#">Контакты</a>
-            <a class="nav_link" href="#">О нас</a>
+            <a class="nav_link" href="about_us.html">О нас</a>
         </nav>
         <div class="nav">
             <h1>Красота и комфорт <br>
@@ -49,8 +49,8 @@
             <h3>На свой вкус</h3>              
           </div>
           <p class="center">Наш отель предлагает широкий выбор комфортабельных номеров, <br>
-            чтобы удовлетворить потребности каждого гостя. <br>
-            Все номера оборудованы современными удобствами и предлагают высокий уровень комфорта, <br>
+            чтобы удовлетворить потребности каждого гостя. </p>
+            <p class="center">Все номера оборудованы современными удобствами и предлагают высокий уровень комфорта, <br>
             чтобы сделать ваше пребывание незабываемым. </p>
           <section class="hotel_rooms">
             <div class="depiction">
@@ -120,12 +120,21 @@
             </div>
         </section>
         <section>
-            <ul class="prod_frame_top">
+            <ul class="prod_frame_too">
             <li class="prod_about">
                 <h4>ОТЛИЧНЫЕ <br>
                     НОМЕРА И ИНТЕРЬЕР</h4>
                 <img src="img/stars.png"  width="160" alt="stars" >
                 <p>Положительные 5000+ отзывов</p>
+                <input class="about" type="button" value="Узнать о нас больше" onclick="redirectToAboutPage()">
+              </li>
+            <li class="prod_about">
+                <div>
+                    <p class="inform">Контактная информация: <br>
+                        Адрес: ул. Музыкальная, 123, Город <br>
+                        Телефон: +7 (XXX) XXX-XXXX <br>
+                        Электронная почта: info@hardrockhotel.com</p>
+                    </div>
             </li>
             <li class="prod_about">
                 <h4 p class="center">Обратная связь</h4>
@@ -135,11 +144,6 @@
                         <input type="email" name="email" id="emailInput" placeholder="@ Введите адрес вашей почты" required>
                         <button type="button" onclick="clearEmail()">Подписаться</button>
                       </div>
-            </li>
-            <li class="prod_about">
-              <img src="img/People.png"  alt="People" >
-              <p>Люди отлично отзываются об отдыхе<br>
-                в нашем отеле мечты</p>
             </li>           
     </section>
     </main>
@@ -150,7 +154,7 @@
                 <a class="nav_link" href="#">Услуги</a>            
                 <a class="nav_link_active" href="hotel_rooms.html">Номера</a>
                 <a class="nav_link" href="#">Контакты</a>
-                <a class="nav_link" href="#">О нас</a>
+                <a class="nav_link" href="about_us.html">О нас</a>
             </div>
             <div  class="footer-i">
                 <a class="nav_link" href="#">Политика конфиденциальности</a>            
