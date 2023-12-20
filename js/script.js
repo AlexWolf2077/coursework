@@ -48,6 +48,15 @@ function closeModal() {
   modalOverlay.style.display = 'none';
   contactForm.reset();
 }
+document.addEventListener('DOMContentLoaded', function() {
+  const modalOverlay = document.querySelector('.modal-overlay');
+  modalOverlay.style.display = 'none';
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
+});
 /* поле ввода почты */
 document.getElementById("emailInput").addEventListener("keydown", function(event) {
   if (event.key === "Enter") {

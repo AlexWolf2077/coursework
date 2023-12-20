@@ -252,6 +252,13 @@ input[type="tel"]:focus {
     margin: 0 0 20px;
     padding: 0;
     } 
+    .produce_frame_too {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 0 20px;
+      padding: 0;
+      } 
     .produce_about { 
       display: flex;
       flex-direction: column; 
@@ -441,3 +448,121 @@ footer {
   margin: 0;
   padding: 0;
  }
+/* Медиа-запросы для адаптивности */
+
+@media (max-width: 844px) {
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    max-width: 844px;
+  }
+  p {font-size: medium;}
+ h1 {margin-right: 0; margin-bottom: 20px;}
+ .open-modal-btn { margin-bottom: 20px;}
+ .Greetings > img {height: 150px;}
+ .ztitle { padding: 0;}
+ .ztitle > h2,h3 { font-size: 18px; }
+  .open-modal-btn,
+  .modal form button {
+    width: 100%;
+    max-width: 300px;
+    height: 50px;
+    font-size: 16px;
+  }
+  .modal {
+    max-width: 90%;
+    justify-content: center;
+    align-items: center;
+    max-width: 844px;
+  }
+  .wide_container > .img { 
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+  }
+  .wide_container > .img > img { 
+    display: flex;
+    height: 250px;
+    width: 250px;
+  }
+  .technologies {
+    gap: 0;
+    line-height:30px;
+    padding: 0;
+  }
+  .technologies > li {
+    padding-left: 10px;
+   }
+  .img {
+    justify-content: center;
+    width:0; 
+    height: 0;
+  }
+  .circle {padding: 10px;
+    width: 40px;
+    height:40px;}
+  .About_Us {flex-direction: column;}
+  .About_Us > div >img { height: 250px; width: 380px;}
+  .hotel_rooms_text,
+  .About_Us_text {
+    width: 100%;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    max-width: 844px;
+  }
+  .depiction {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 844px;
+  }
+  .hotel_rooms_img > img {width: 380px; height: 280px; }
+  .wide_container,  
+  .produce_frame_top,
+  .prod_frame_top,
+  .prod_frame_too {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 844px;
+    padding: 0;
+  }
+  .produce_frame_top > .produce_about > img {height: 200px;}
+  .text_cabinets,
+  .produce_about,
+  .prod_about {
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    max-width: 844px;
+    padding: 0;
+  }
+  .produce_about > p { margin-bottom: 15px;}
+  .hotel_rooms_img {
+    width: 100%;
+  }
+
+  .hotel_rooms_text,
+  .About_Us_text,
+  .inform {
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 844px;
+  }
+  .mail_field  {width: 280px; }
+  .footer-inner p { margin-bottom: 30px;}
+  .footer-inner div {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 844px;
+  }
+}
+
+
