@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rooms</title>
     <link rel="stylesheet" href="css/necolas.github.io_normalize.css_8.0.1_normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,15 +12,39 @@
         <nav class="nav">
             <a class="nav_link" href="index.html"><img src="img/Logo_white.png" height="200" alt="лого"></a>
             <a class="nav_link" href="index.html">Главная</a>
-            <a class="nav_link" href="#">Услуги</a>            
             <a class="nav_link_active" href="hotel_rooms.html">Номера</a>
-            <a class="nav_link" href="#">Контакты</a>
+            <a class="nav_link" href="services.html">Услуги</a>            
             <a class="nav_link" href="about_us.html">О нас</a>
+            <a class="nav_link" href="events.html">Cобытия</a>          
         </nav>
         <div class="nav">
             <h1>Красота и комфорт <br>
                 Уютно, как дома</h1>
                 <input class="open-modal-btn" type="button" value=" Забронировать ">
+        </div>
+        <div class="check">
+            <h2>Проверить цены</h2>
+            <div class="checkinside"> 
+            <div class="checklb">
+                <p >Дата въезда</p>
+                <input type="date" name="" value="check-in" class="checkinp" id="">
+            </div>
+            <div class="checklb">
+                <p>Дата выезда</p>
+                <input type="date" name="" value="check-out" class="checkinp" id="">
+            </div>
+            <div class="checklb">
+                <p class="checklb">Номер</p>
+                <select class="secroom" name="rooms" id="rooms">
+                    <option class="optroom" value="royal room">Президентский</option>
+                    <option class="optroom" value="delux room">Премиум</option>
+                    <option class="optroom" value="double room">Люкс</option>
+                    <option class="optroom" value="single room">Бизнес класс</option>
+                    <option class="optroom" value="single room">Минимализм</option>
+                </select>
+            </div>
+        </div>
+            <input type="button" value="Узнать цену" id="sbtn">
         </div>
         <div class="modal-overlay">
             <div class="modal">
@@ -125,7 +149,6 @@
                 <h4>ОТЛИЧНЫЕ <br>
                     НОМЕРА И ИНТЕРЬЕР</h4>
                 <img src="img/stars.png"  width="160" alt="stars" >
-                <p>Положительные 5000+ отзывов</p>
                 <input class="about" type="button" value="Узнать о нас больше" onclick="redirectToAboutPage()">
               </li>
             <li class="prod_about">
@@ -137,24 +160,20 @@
                     </div>
             </li>
             <li class="prod_about">
-                <h4 p class="center">Обратная связь</h4>
-                <p class="center">Оставьте свою почту, чтобы мы могли присылать <br>
-                    вам уведомления о наших акциях.</p>
-                    <div class="mail_field">
-                        <input type="email" name="email" id="emailInput" placeholder="@ Email" required>
-                        <button type="button" onclick="clearEmail()">Подписаться</button>
-                      </div>
-            </li>           
+                <img src="img/People.png"  alt="People" >
+                <p>Люди отлично отзываются об отдыхе<br>
+                  в нашем отеле мечты</p>
+              </li> 
     </section>
     </main>
     <footer>
         <div class="footer-inner">
             <div>
                 <a class="nav_link" href="index.html">Главная</a>
-                <a class="nav_link" href="#">Услуги</a>            
                 <a class="nav_link_active" href="hotel_rooms.html">Номера</a>
-                <a class="nav_link" href="#">Контакты</a>
+                <a class="nav_link" href="services.html">Услуги</a>            
                 <a class="nav_link" href="about_us.html">О нас</a>
+                <a class="nav_link" href="events.html">Cобытия</a>  
             </div>
             <div  class="footer-i">
                 <a class="nav_link" href="#">Политика конфиденциальности</a>            

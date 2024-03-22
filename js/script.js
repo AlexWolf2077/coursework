@@ -66,13 +66,19 @@ document.getElementById("emailInput").addEventListener("keydown", function(event
 });
 function clearEmail() {
   var emailInput = document.getElementById("emailInput").value;
+  var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   if (emailInput == '') {
     alert('Пожалуйста, заполните поле формы.');
     return;
   }
+  if (!emailPattern.test(emailInput)) {
+    alert('Пожалуйста, введите корректный адрес электронной почты.');}
+    else {
   document.getElementById("emailInput").value = "";
   alert("Данные отправлены");
 }
+}
+/* кнопка узнать о нас больше */
 function redirectToAboutPage() {
   window.location.href = "about_us.html";
 }
