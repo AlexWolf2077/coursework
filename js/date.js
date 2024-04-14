@@ -32,35 +32,35 @@ document.addEventListener('DOMContentLoaded', function() {
       return true;
     }
   
-    // Функция для получения цены в рублях в зависимости от выбранного номера
-    function calculatePrice(checkInDate, checkOutDate, roomType) {
-      var pricePerDay = 0;
-      
-      switch (roomType) {
-          case 'presidential':
-              pricePerDay = 10000;
-              break;
-          case 'premium':
-              pricePerDay = 5000;
-              break;
-          case 'luxury':
-              pricePerDay = 3000;
-              break;
-          case 'business':
-              pricePerDay = 2000;
-              break;
-          case 'minimalism':
-              pricePerDay = 1000;
-              break;
-          default:
-              pricePerDay = 0;
-      }
-  
-      var numberOfDays = Math.ceil((new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24));
-      var totalPrice = pricePerDay * numberOfDays;
-  
-      return totalPrice + ' ₽ за ' + numberOfDays + ' суточных дней';
+// Функция для получения цены в рублях в зависимости от выбранного номера
+function calculatePrice(checkInDate, checkOutDate, roomType) {
+    var pricePerDay = 0;
+    
+    switch (roomType) {
+        case 'presidential':
+            pricePerDay = 10000;
+            break;
+        case 'premium':
+            pricePerDay = 5000;
+            break;
+        case 'luxury':
+            pricePerDay = 3000;
+            break;
+        case 'business':
+            pricePerDay = 2000;
+            break;
+        case 'minimalism':
+            pricePerDay = 1000;
+            break;
+        default:
+            pricePerDay = 0;
     }
+  
+    var numberOfDays = Math.max(1, (new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24) + 1);
+    var totalPrice = pricePerDay * numberOfDays;
+  
+    return totalPrice + ' ₽ за ' + numberOfDays + ' дней';
+  }
   
     // Установка минимальной даты в поле ввода даты въезда
     setMinCheckInDate();

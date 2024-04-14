@@ -72,11 +72,11 @@ function clearEmail() {
     return;
   }
   if (!emailPattern.test(emailInput)) {
-    alert('Пожалуйста, введите корректный адрес электронной почты.');}
-    else {
-  document.getElementById("emailInput").value = "";
-  alert("Данные отправлены");
-}
+    document.getElementById("emailInput").value = "";
+    alert('Пожалуйста, введите корректный адрес электронной почты.');
+  } else {
+    alert("На адрес электронной почты отправлено письмо, содержащее ссылку для подтверждения правильности e-mail адреса.");
+  }
 }
 /* кнопка узнать о нас больше */
 function redirectToAboutPage() {
