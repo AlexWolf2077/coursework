@@ -1,3 +1,12 @@
+/* кнопка забронировать */
+document.addEventListener('DOMContentLoaded', function() {
+  const reservationButton = document.querySelector('.reservation');
+  if (reservationButton) {
+    reservationButton.addEventListener('click', function() {
+      window.location.href = 'reservation.html';
+    });
+  }
+});
 /* Модальное окно */
 document.addEventListener('DOMContentLoaded', function() {
   const modalOverlay = document.querySelector('.modal-overlay');
@@ -33,15 +42,7 @@ function validateForm() {
   if (nameValue === '' || phoneValue === '') {
     alert('Пожалуйста, заполните все поля формы.');
     return false;
-  }
-  if (!/^[a-zA-Zа-яА-Я\s]+$/.test(nameValue)) {
-    alert('Поле "Имя" должно содержать только текстовые значения.');
-    return false;
-  }
-  if (!/^\d+$/.test(phoneValue)) {
-    alert('Поле "Номер телефона" должно содержать только числовые значения.');
-    return false;
-  }
+  }  
   return true;
 }
 function closeModal() {

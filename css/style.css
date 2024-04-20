@@ -9,7 +9,7 @@
     background: #433A28;
     }
   body {  background-color:#CEC2A8; }
-  .nav_link, h1 {
+  .nav_link, h1, .open-modal-btn {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     color:#CEC2A8;
@@ -20,6 +20,13 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     color:#CEC2A8;
+    }
+    .register {
+      text-decoration: none;
+    }
+    .register:hover {
+      color:rgb(182, 63, 63);
+      transform: none;
     }
   a {font-size: 18px;}
   a:hover { transform: scale(120%)}
@@ -44,7 +51,7 @@
     font-weight: 600;
     color: #795D1F;
   }
-  h4 {
+  h4, .register {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 700;
       font-size: 24px;
@@ -167,7 +174,10 @@
   flex-direction: column;
   align-items: center;
 }
-.modal > h4 { margin-top: 0;}
+.modal > h4 { margin-bottom: 0;
+  margin-right: 60px;
+  margin-left: 60px;
+}
 .modal > .ztitle > h2 { 
   margin-bottom: 5px;
   margin-top: 30px;
@@ -340,7 +350,7 @@ input[type="tel"]:focus {
     color: #CEC2A8;
     line-height: 30px;
   }
-  .about , .open-modal-btn {
+  .about  {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     border: 0;
@@ -354,10 +364,10 @@ input[type="tel"]:focus {
     top: 211px;
     margin: 20px;
   }
-  .about:hover , .open-modal-btn:hover {
+  .about:hover  {
     transform: scale(110%)
 }
-  .about:active , .open-modal-btn:active {
+  .about:active  {
     background-color:#ccb070;
     font-weight: 600;
     color:#433A28;
