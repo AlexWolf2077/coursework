@@ -34,33 +34,38 @@
           </div>
     </header>
     <main>
-        <div>
+        <br>
+        <ul class="prod_frame_top">
+            <li class="prod_about">
+                <h4>Загрузить аватар</h4> <br>
+                <form action="upload.php" method="post" enctype="multipart/form-data">
+                    <div class="column">
+                    <input  type="file" name="image" accept="image/*"> 
+                    <button class="upload" type="submit" name="submit">Загрузить</button>
+                </div>
+                </form>
+            </li>
+            <li class="prod_about">
+          <div class="column">
+            <input type="text" id="password" placeholder="Фамилия" required>
+            <input type="text" id="password" placeholder="Имя" required>
+            <input type="text" id="password" placeholder="Отчество" required>
+            <input type="text" id="password" placeholder="Номер телефона" required>
+            <input type="text" id="password" placeholder="Серия и номер паспорта" required>
             <input type="text" id="name" placeholder="Логин" required>
+            <input type="text" id="password" placeholder="Пароль" required>            
           </div>
-          <div>
-            <input type="text" id="password" placeholder="Пароль" required>
-          </div>
-        <section>
-            <ul class="prod_frame_top">
-                <li class="prod_about">
-                    <h4>ОТЛИЧНЫЕ <br>
-                        НОМЕРА И ИНТЕРЬЕР</h4>
-                    <img src="img/stars.png"  width="160" alt="stars" >
-                </li>
-                <li class="prod_about">
+        </li>
+    </ul>
+        <div class="center">
+            <input class="Registration" type="button" value=" Зарегистрироваться ">
+        </div> <br><br>
                     <div>
                     <p class="inform">Контактная информация: <br>
                         Адрес: ул. Музыкальная, 123, Город <br>
                         Телефон: +7 (XXX) XXX-XXXX <br>
                         Электронная почта: info@hardrockhotel.com</p>
                     </div>
-                </li>
-                <li class="prod_about">
-                  <img src="img/People.png"  alt="People" >
-                  <p>Люди отлично отзываются об отдыхе<br>
-                    в нашем отеле мечты</p>
-                </li>          
-    </section>
     </main>
     <footer>
         <div class="footer-inner">
