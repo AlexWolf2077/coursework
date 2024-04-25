@@ -17,7 +17,7 @@ const modalOverlay = document.querySelector('.modal-overlay');
 const closeModalBtn = document.querySelector('.close-modal-btn');
 const contactForm = document.getElementById('contact-form');
 const nameInput = document.getElementById('name');
-const phoneInput = document.getElementById('phone');
+const phoneInput = document.getElementById('password');
 openModalBtn.addEventListener('click', function() {
   modalOverlay.style.display = 'flex';
 });
@@ -38,8 +38,8 @@ modalOverlay.addEventListener('click', function(event) {
 });
 function validateForm() {
   const nameValue = nameInput.value.trim();
-  const phoneValue = phoneInput.value.trim();
-  if (nameValue === '' || phoneValue === '') {
+  const passwordValue = passwordInput.value.trim();
+  if (nameValue === '' || passwordValue === '') {
     alert('Пожалуйста, заполните все поля формы.');
     return false;
   }  
