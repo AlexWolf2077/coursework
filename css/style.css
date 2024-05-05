@@ -545,6 +545,41 @@ footer {
   margin: 0;
   padding: 0;
  }
+ .sidebar {
+  float: left;
+  padding: 50px;
+  background: #433A28;
+  display: block;
+ }
+ .sidebar > .checklb {
+  display: block;
+ }
+ .sidebar > .checklb > p {
+  padding: 0;
+ }
+ .sidebar > .about {
+  margin: 20px 0;
+ }
+ .reser {
+  display: block;
+ }
+ .reser > .hotel_rooms > .depiction {
+  background: #433A28;
+  gap: 0;
+  border-radius: 5%;
+  margin: 20px;
+  width: 1000px;
+ }
+ .reser > .hotel_rooms > .depiction > .hotel_rooms_text {
+  width: 500px;
+  padding: 5px;
+ }
+ .reser > .hotel_rooms > .depiction > .hotel_rooms_text > p {
+  width: 400px;
+ }
+ .reser > .hotel_rooms > .depiction > .hotel_rooms_text > .about {
+  margin: 0 0 0 50px;
+ }
 /* Медиа-запросы для адаптивности */
 @media (max-width: 844px) {
   .nav {
