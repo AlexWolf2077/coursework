@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <img src="img/Logo_white.png" height="200" alt="Logo">
+            <a class="nav_link" href="/">Главная</a>
+            <a class="nav_link" href="hotel_rooms.html">Номера</a>
+            <a class="nav_link" href="services.html">Услуги</a>         
+            <a class="nav_link" href="about_us.html">О нас</a>
+            <a class="open-modal-btn">Вход </a>      
+        </nav>
+        <div class="modal-overlay">
+            <div class="modal">
+                <br>  <br>                       
+              <form id="contact-form" action="/entered" method="post">
+                <div>
+                  <input type="pass" id="name" name="login" placeholder="Логин" required>
+                </div>
+                <div>
+                  <input type="pass" id="password" name="password" placeholder="Пароль" required>
+                </div>
+                <button type="submit">Войти</button>
+              </form>
+              <button class="close-modal-btn">&#10006;</button>
+            </div>
+          </div>
+    </header>
+    <main>
+        <br>
+        <ul class="prod_frame_top">
+            <li class="prod_about">
+                <h4>Загрузить аватар</h4> <br>
+                <div class="column" id="img">
+                    <input  type="file" name="image" id="image" accept="image/*"> 
+                    <img src="img/default.jpg" width="200" id="avatar" style="margin-top: 30px; clip-path: circle();">
+                    <button class="upload" name="submit" onclick="show_avatar()">Загрузить</button>
+                </div>
+            </li>
+            <li class="prod_about">
+          <div class="column">
+            <form action="/authorizated" method="post" onsubmit="return validateRegistration()">
+                <input type="text" style="float: left; clear:both;" id="LastName" name="Surname" placeholder="Фамилия" required>
+                <input type="text" style="float: left; clear:both;" id="FirstName" name="Name" placeholder="Имя" required>
+                <input type="text" style="float: left; clear:both;" id="Surname" name="Lastname" placeholder="Отчество" required>
+                <input type="text" style="float: left; clear:both;" id="phone" name="phone" placeholder="Номер телефона" required>
+                <input type="text" style="float: left; clear:both;" title="Впишите 10 цифр без пробелов между ними" id="passport" name="passport" placeholder="Серия и номер паспорта" required>
+                <input type="text" style="float: left; clear:both;" id="name" name="login" placeholder="Логин" required>
+                <input type="text" style="float: left; clear:both;" id="password" name="password" placeholder="Пароль" required>
+                <input type="hidden" id="url" name="url" required>
+                <br><br>
+                <input style="float: left; margin-top: 30px;" class="Registration" type="submit" value=" Зарегистрироваться ">
+            </form>
+            <input type="hidden" id=<%=error%>> 
+            <p id="error_message" style="color: red;"></p> 
+          </div>
+        </li>
+    </ul>
+        <br><br>
+                    <div>
+                    <p class="inform">Контактная информация: <br>
+                        Адрес: ул. Музыкальная, 123, Город <br>
+                        Телефон: +7 (XXX) XXX-XXXX <br>
+                        Электронная почта: info@hardrockhotel.com</p>
+                    </div>
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <a class="nav_link" href="/">Главная</a>
+                <a class="nav_link" href="hotel_rooms.html">Номера</a>
+                <a class="nav_link" href="services.html">Услуги</a>            
+                <a class="nav_link" href="about_us.html">О нас</a>          
+            </div>
+            <div  class="footer-i">
+                <a class="nav_link" href="#">Политика конфиденциальности</a>            
+                <a class="nav_link" href="#">Юридические договоры</a>
+                <a class="nav_link" href="#">Часто задаваемые вопросы</a> 
+            </div>
+            <div>
+                <p> © Все права защищены</p>
+            </div>            
+        </div>
+        <div class="right">
+            <a href="#"><img src="img/icon_Twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="img/icon_Facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="img/icon_YouTube.png" alt="YouTube"></a>
+        </div>            
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        var img = document.getElementById("avatar");
+        var url_label = document.getElementById("url");
+        function show_avatar()
+        {
+            console.log(69);
+            var file = document.getElementById('image').files[0];
+            var reader  = new FileReader();
+            // it's onload event and you forgot (parameters)
+            reader.onload = function(e)  {
+                img.src = e.target.result;
+                url_label.value = img.src;
+            }
+            // you have to declare the file loading
+            reader.readAsDataURL(file);
+        }
+        if (document.getElementById("error"))
+        {
+            document.getElementById("error_message").innerHTML = "Логин занят! Используйте другой";
+        }
+        else document.getElementById("error_message").innerHTML = "";
+
+    </script>
+</body>
+</html>

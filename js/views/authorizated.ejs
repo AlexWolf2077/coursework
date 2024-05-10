@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hard Rock Hotel</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <img src="/img/Logo_white.png" height="200" alt="Logo">
+            <a class="nav_link_active" href="/">Главная</a>
+            <a class="nav_link" href="hotel_rooms.html">Номера</a>
+            <a class="nav_link" href="services.html">Услуги</a>            
+            <a class="nav_link" href="about_us.html">О нас</a>
+            <a><div class="bubble" id="bubble" onmouseover="profile_over()" onmouseleave="profile_leave()" style="padding:20px;"><p id="bubbleText" style="color: #CEC2A8;"><%=login%>&nbsp;&nbsp;&nbsp;&nbsp;</p><<%=img_part%> height="100" style="clip-path: circle();" id="avatar_img"> </div></a>          
+        </nav>
+        <div class="nav">
+            <h1>Красота и комфорт <br>
+                Уютно, как дома</h1>
+                <input class="reservation" type="button" value=" Забронировать ">
+                <dialog onmouseover="dialog_over()" onmouseleave="dialog_leave()" id="dialog" style="margin-left:75%; background: #433A28; width: 300px; opacity: 0;" open><nav class="nav"><a id="edit_link" class="nav_link" href="/profile:<%=login%>">Редактировать профиль</a></nav><br>
+                    <nav class="nav"><a id="edit_link" class="nav_link" href="/delete:<%=login%>">Удалить аккаунт</a></nav><br>
+                    <nav class="nav"><a id="exit_link" class="nav_link" href="/">Выйти</a></nav>
+                </dialog>
+        </div>        
+        <div class="modal-overlay">
+            <div class="modal">
+                <h4>Нет аккаунта? </h4>  
+                <a class="register" href="/registration">Зарегистрируйся!</a>   <br>                       
+              <form id="contact-form" action="/entered" method="post">
+                <div>
+                  <input type="text" id="name" name="login" placeholder="Логин" required>
+                </div>
+                <div>
+                  <input type="password" id="password" name="password" placeholder="Пароль" required>
+                </div>
+                <input type="submit" value=" Войти ">
+              </form>
+              <button class="close-modal-btn">&#10006;</button>
+            </div>
+          </div>
+    </header>
+    <main>
+        <div class="Greetings">
+            <img src="img/Greetings.png" alt="Greetings">
+        </div>
+        <div class="depiction">
+            <img src="img/icon_drinks.png" alt="drinks"><p>Приветственные <br> напитки</p>
+            <img src="img/icon_cars.png" alt="cars"><p>Аренда машины</p>
+            <img src="img/icon_resort.png" alt="resort"><p>Курорт и Спа</p>
+            <img src="img/icon_wifi.png" alt="wifi"><p>Бесплатный <br> WIFI</p>
+        </div>
+        <section class="Stay_here">
+            <div class="ztitle">
+              <h2>Почему вам следует </h2>
+              <h3>Остановиться здесь</h3>              
+            </div>            
+                <p class="center">Лучшее соотношение цены и качества. Мы ориентируемся на комфорт и удобство. </p>
+                <p class="center">Ваше путешествие останется незабываемым!</p>
+                <h4 class="center">Располагайтесь с удовольствием</h4>
+            <div class="wide_container">
+                <div class="img">
+                    <img src="img/hotel_room.png" height="600" alt="hotel_room">
+                </div>
+                <div class="text_cabinets">
+                    <ul class="technologies">
+                        <li>
+                            <div class="circle">1</div>
+                            <h4>Обеспечьте себе лучший выбор комнаты</h4>
+                        </li>
+                        <li>
+                            <div class="circle">2</div>
+                            <h4>Низкая цена при лучшем качестве</h4>
+                        </li>
+                        <li>
+                            <div class="circle">3</div>
+                            <h4>Ресторанное обслуживание</h4>
+                        </li>                        
+                    </ul> 
+                </div>
+            </div>         
+        </section>
+        <section class="hotel_rooms">
+            <h4 class="center">Наши комнаты</h4>
+            <div class="ztitle">
+                <h2>Лучший выбор</h2>
+                <h3>в Мире</h3>
+            </div>
+            <ul class="produce_frame_top">
+                <li class="produce_about">
+                    <img src="/img/hotel_room_1.png" height="250" alt="hotel_room_1" >
+                    <h4 class="center">Премиум <br> Номер с прекрасным видом</h4>
+                </li>
+                <li class="produce_about">
+                   <img src="img/hotel_room_2.png" height="250" alt="hotel_room_2" >
+                   <h4 class="center">Люкс <br> Роскошный номер</h4>
+                </li>
+                <li class="produce_about">
+                  <img src="img/hotel_room_3.png" height="250" alt="hotel_room_3" >
+                  <h4 class="center">Бизнес класс <br> Стандартный</h4> 
+                </li>
+                <li class="produce_about">
+                   <img src="img/hotel_room_4.png" height="250" alt="hotel_room_4" >
+                   <h4 class="center">Минимализм <br> Эконом вариант</h4> 
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="About_Us">
+                <div class="About_Us_text">
+                    <h2>О нас</h2>
+                    <p>Мы заботимся о комфорте наших гостей. </p>
+                    <p>В нашем отеле свой ресторан, спа-комплекс <br>
+                        и различные развлекательные зоны.</p>
+                    <p>Всё чтобы сделать ваш отпуск разнообразным, <br>
+                        наполненным и счастливым.</p>
+                        <input class="about" type="button" value="Узнать больше" onclick="redirectToAboutPage()">
+                </div>
+                <div>
+                    <img src="img/restaurant.png" alt="restaurant"> 
+                </div>                                  
+            </div>
+        </section>
+        <section>
+                <ul class="prod_frame_top">
+                <li class="prod_about">
+                    <h4>ОТЛИЧНЫЕ <br>
+                        НОМЕРА И ИНТЕРЬЕР</h4>
+                    <img src="img/stars.png"  width="160" alt="stars" >
+                </li>
+                <li class="prod_about"> 
+                    <h4 p class="center">Обратная связь</h4>
+                    <p class="center">Оставьте свою почту, чтобы мы могли присылать <br>
+                        вам уведомления о наших акциях.</p>
+                        <div class="mail_field">
+                            <input type="email" name="email" id="emailInput" placeholder="@ Email" required>
+                            <button type="button" onclick="clearEmail()">Подписаться</button>
+                          </div>
+                </li>                
+                <li class="prod_about">
+                  <img src="img/People.png"  alt="People" >
+                  <p>Люди отлично отзываются об отдыхе<br>
+                    в нашем отеле мечты</p>
+                </li>           
+        </section>
+        <section>
+            <ul class="produce_frame_too">
+                <li class="produce_about">
+                    <img src="img/icon_inform_1.png" height="60" width="60" alt="icon_inform_1" >
+                    <h4 class="center">РЕСТОРАН</h4>
+                    <p>Уютный интерьер и изысканная кухня 
+                        сделают ваш обед или ужин незабываемым. <br>
+                        Мы рады нашим гостям и всегда стремимся 
+                        их приятно удивить.</p>
+                </li>
+                <li class="produce_about">
+                   <img src="img/icon_inform_2.png" height="60" width="60" alt="icon_inform_2" >
+                   <h4 class="center">СПА-КОМПЛЕКС</h4>
+                   <p>Прекрасное место, <br>
+                    чтобы наслаждаться каждым моментом,
+                    оставить в стороне 
+                    любые тревоги и стрессы, <br>
+                    достичь гармонии с окружающим
+                     миром и самим собой.</p>
+                </li>
+                <li class="produce_about">
+                  <img src="img/icon_inform_3.png" height="60" width="60" alt="icon_inform_3" >
+                  <h4 class="center">ЛУЧШИЕ НОМЕРА</h4> 
+                  <p> Уникальный опыт проживания, <br>
+                    который сочетает в себе комфорт, <br>
+                    роскошь и высокий уровень сервиса. </p>
+                    <p>Каждый номер оснащен: </p>
+                    <p class="list">
+                    > удобной мебелью<br>
+                    > кондиционером <br>
+                    > мини холодильником <br>
+                    > ванной комнатой</p>
+                </li>
+                <li class="produce_about">
+                   <img src="img/icon_inform_4.png" height="60" width="60" alt="icon_inform_4" >
+                   <h4 class="center">ЛАУНЖ-БАР</h4> 
+                   <p>Служит полноценной зоной отдыха, 
+                    отделенной и изолированной <br>
+                    от других локаций. <br>
+                    Здесь звучит расслабляющая музыка, 
+                    организовано специальное приглушенное освещение. </p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <a class="nav_link_active" href="index.html">Главная</a>
+                <a class="nav_link" href="hotel_rooms.html">Номера</a>
+                <a class="nav_link" href="services.html">Услуги</a>            
+                <a class="nav_link" href="about_us.html">О нас</a>       
+            </div>
+            <div  class="footer-i">
+                <a class="nav_link" href="#">Политика конфиденциальности</a>            
+                <a class="nav_link" href="#">Юридические договоры</a>
+                <a class="nav_link" href="#">Часто задаваемые вопросы</a> 
+            </div>
+            <div>
+                <p> © Все права защищены</p>
+            </div>            
+        </div>
+        <div class="right">
+            <a href="#"><img src="img/icon_Twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="img/icon_Facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="img/icon_YouTube.png" alt="YouTube"></a>
+        </div>            
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

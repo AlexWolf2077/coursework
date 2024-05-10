@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <img src="img/Logo_white.png" height="200" alt="Logo">
+            <a class="nav_link" href="index.html">Главная</a>
+            <a class="nav_link_active" href="hotel_rooms.html">Номера</a>
+            <a class="nav_link" href="services.html">Услуги</a>            
+            <a class="nav_link" href="about_us.html">О нас</a>
+            <a class="open-modal-btn">Вход /<br>Регистрация</a>          
+        </nav>
+        <div class="nav">
+            <h1>Красота и комфорт <br>
+                Уютно, как дома</h1>
+                <input class="reservation" type="button" value=" Забронировать ">
+        </div>
+        <div class="check">
+            <h2>Проверить цены</h2>
+            <div class="checkinside"> 
+            <div class="checklb">
+                <p >Дата въезда</p>
+                <input type="date" name="check-in"  class="checkinp" id="check-in">
+            </div>
+            <div class="checklb">
+                <p>Дата выезда</p>
+                <input type="date" name="check-out"  class="checkinp" id="check-out">
+            </div>
+            <div class="checklb">
+                <p class="checklb">Номер</p>
+                <select class="secroom" name="rooms" id="room-type">
+                    <option class="optroom" value="presidential">Президентский</option>
+                    <option class="optroom" value="premium">Премиум</option>
+                    <option class="optroom" value="luxury">Люкс</option>
+                    <option class="optroom" value="business">Бизнес класс</option>
+                    <option class="optroom" value="minimalism">Минимализм</option>
+                </select>
+            </div>
+        </div>
+            <input type="button" value="Узнать цену" id="sbtn">
+        </div>
+        <script src="js/date.js"></script>
+        <div class="modal-overlay">
+            <div class="modal">
+                <h4>Нет аккаунта? </h4>  
+                <a class="register" href="registration.html">Зарегистрируйся!</a>   <br>                       
+              <form id="contact-form">
+                <div>
+                  <input type="pass" id="name" placeholder="Логин" required>
+                </div>
+                <div>
+                  <input type="pass" id="password" placeholder="Пароль" required>
+                </div>
+                <button type="submit">Войти</button>
+              </form>
+              <button class="close-modal-btn">&#10006;</button>
+            </div>
+          </div>
+    </header>
+    <main>
+        <div class="ztitle">
+            <h2>Выбирайте номер </h2>
+            <h3>На свой вкус</h3>              
+          </div>
+          <p class="center">Наш отель предлагает широкий выбор комфортабельных номеров, <br>
+            чтобы удовлетворить потребности каждого гостя. </p>
+            <p class="center">Все номера оборудованы современными удобствами и предлагают высокий уровень комфорта, <br>
+            чтобы сделать ваше пребывание незабываемым. </p>
+          <section class="hotel_rooms">
+            <div class="depiction">
+                <div class="hotel_rooms_text">
+                    <h2>Президентский номер</h2>
+                    <p>Насладитесь роскошью и простором в нашем президентском номере. </p>
+                    <p>Этот номер предлагает роскошную обстановку <br>
+                        с элегантным дизайном и превосходными удобствами. </p>
+                    <p>Вы сможете насладиться приватной террасой <br>
+                        или балконом с великолепным видом, <br>
+                        а также иметь доступ к эксклюзивным услугам и привилегиям.</p>
+                </div>
+                <span class="hotel_rooms_img">
+                    <img src="img/hotel_room_5.png" height="450" alt="hotel_room_5"> 
+                </span>                                  
+            </div>
+            <div class="depiction">
+                <span class="hotel_rooms_img">
+                    <img src="img/hotel_room_1.png" height="450" alt="hotel_room_1"> 
+                </span> 
+                <div class="hotel_rooms_text">
+                    <h2>Премиум</h2>
+                    <p>Наши премиум номера предлагают стильное оформление, <br>
+                        комфортабельную обстановку, прекрасный и живописный вид.</p>
+                    <p>Здесь вы найдете все необходимое для приятного отдыха, <br>
+                        включая просторную кровать, современную ванную комнату <br>
+                        и удобные мебельные комплекты. </p>
+                    <p>Насладитесь высоким уровнем сервиса и уютом в наших премиум номерах.</p>
+                </div>                                                  
+            </div>
+            <div class="depiction">
+                <div class="hotel_rooms_text">
+                    <h2>Люкс</h2>
+                    <p>Наши люксовые номера предлагают роскошь и комфорт в каждой детали.</p>
+                    <p>Здесь вы найдете просторные помещения с элегантным дизайном, <br>
+                        отдельной гостиной зоной и спальней, а также роскошной ванной комнатой.</p>
+                    <p>Насладитесь приватностью и роскошью в наших люксовых номерах.</p>
+                </div>
+                <span class="hotel_rooms_img">
+                    <img src="img/hotel_room_2.png" height="450" alt="hotel_room_2"> 
+                </span>                                  
+            </div>
+            <div class="depiction">
+                <span class="hotel_rooms_img">
+                    <img src="img/hotel_room_3.png" height="450" alt="hotel_room_3"> 
+                </span> 
+                <div class="hotel_rooms_text">
+                    <h2>Бизнес класс</h2>
+                    <p>Наш бизнес-класс предлагает удобство и функциональность <br>
+                        для деловых путешественников.</p> 
+                    <p>Здесь вы найдете просторное рабочее пространство, <br> 
+                        современные технологии и комфортабельную обстановку. </p>
+                    <p>Насладитесь удобствами, специально разработанными <br> для успешных деловых поездок.</p>
+                </div>                                                  
+            </div>
+            <div class="depiction">
+                <div class="hotel_rooms_text">
+                    <h2>Минимализм</h2>
+                    <p>Наши эконом номера предлагают доступное проживание <br> без ущерба для комфорта.</p>
+                    <p>Здесь вы найдете все необходимое для приятного отдыха, <br>
+                         включая удобную кровать, основные удобства и просторную ванную комнату.</p>
+                    <p>Насладитесь уютом и функциональностью в наших эконом номерах.</p>
+                </div>
+                <span class="hotel_rooms_img">
+                    <img src="img/hotel_room_4.png" height="450" alt="hotel_room_4"> 
+                </span>                                  
+            </div>
+        </section>
+        <section>
+            <ul class="prod_frame_top">
+                <li class="prod_about">
+                    <h4>ОТЛИЧНЫЕ <br>
+                        НОМЕРА И ИНТЕРЬЕР</h4>
+                    <img src="img/stars.png"  width="160" alt="stars" >
+                </li>
+                <li class="prod_about">
+                    <div>
+                    <p class="inform">Контактная информация: <br>
+                        Адрес: ул. Музыкальная, 123, Город <br>
+                        Телефон: +7 (XXX) XXX-XXXX <br>
+                        Электронная почта: info@hardrockhotel.com</p>
+                    </div>
+                </li>
+                <li class="prod_about">
+                  <img src="img/People.png"  alt="People" >
+                  <p>Люди отлично отзываются об отдыхе<br>
+                    в нашем отеле мечты</p>
+                </li> 
+    </section>
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <a class="nav_link" href="index.html">Главная</a>
+                <a class="nav_link_active" href="hotel_rooms.html">Номера</a>
+                <a class="nav_link" href="services.html">Услуги</a>            
+                <a class="nav_link" href="about_us.html">О нас</a> 
+            </div>
+            <div  class="footer-i">
+                <a class="nav_link" href="#">Политика конфиденциальности</a>            
+                <a class="nav_link" href="#">Юридические договоры</a>
+                <a class="nav_link" href="#">Часто задаваемые вопросы</a> 
+            </div>
+            <div>
+                <p> © Все права защищены</p>
+            </div>            
+        </div>
+        <div class="right">
+            <a href="#"><img src="img/icon_Twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="img/icon_Facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="img/icon_YouTube.png" alt="YouTube"></a>
+        </div>            
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
