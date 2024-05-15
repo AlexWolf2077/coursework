@@ -11,7 +11,11 @@
     <header>
         <nav class="nav">
             <img src="img/Logo_white.png" height="200" alt="Logo">
-            <a class="nav_link" href="javascript:history.back()">Назад</a>       
+            <a class="nav_link" href="/">Главная</a>
+            <a class="nav_link" href="hotel_rooms.html">Номера</a>
+            <a class="nav_link" href="services.html">Услуги</a>         
+            <a class="nav_link" href="about_us.html">О нас</a>
+            <a class="open-modal-btn">Вход /<br>Регистрация</a>         
         </nav>
         <div class="modal-overlay">
             <div class="modal">
@@ -36,15 +40,15 @@
           <div class="sidebar">
             <div class="checklb">
                 <p >Дата въезда</p>
-                <input oninput="update_all();" type="date" name="check-in"  class="checkinp" id="check-in">
+                <input type="date" name="check-in"  class="checkinp" id="check-in">
             </div>
             <div class="checklb">
                 <p>Дата выезда</p>
-                <input oninput="update_all();" type="date" name="check-out"  class="checkinp" id="check-out">
+                <input type="date" name="check-out"  class="checkinp" id="check-out">
             </div>
             <div class="checklb">
                 <p class="checklb">Взрослые</p>
-                <select onchange="update_all();" class="secroom" name="rooms" id="room-type-adult">
+                <select class="secroom" name="rooms" id="room-type">
                     <option class="optroom" value="1">1</option>
                     <option class="optroom" value="2">2</option>
                     <option class="optroom" value="3">3</option>
@@ -53,7 +57,7 @@
             </div>
             <div class="checklb">
                 <p class="checklb">Дети 6-11 лет</p>
-                <select onchange="update_all();" class="secroom" name="rooms" id="room-type-child">
+                <select class="secroom" name="rooms" id="room-type">
                     <option class="optroom" value="0">0</option>
                     <option class="optroom" value="1">1</option>
                     <option class="optroom" value="2">2</option>
@@ -77,13 +81,11 @@
                         <p>Вы сможете насладиться приватной террасой 
                             или балконом с великолепным видом, 
                             а также иметь доступ к эксклюзивным услугам и привилегиям.</p>
-                                <select id="select1" onchange="update_all()" class="secroom" name="rooms" id="room-type">
+                                <select class="secroom" name="rooms" id="room-type">
                                     <option class="optroom" value="present">Тариф с завтраком</option>
                                     <option class="optroom" value="absent">Тариф без завтрака</option>
                                 </select>
-                            <form id="form1" action="/booking/:<%=login%>/:1" onsubmit="return validateReservation()" method="get">
-                                <input class="about" type="submit" value="Выбрать">
-                            </form>
+                            <input class="about" type="button" value="Выбрать">
                     </div>
                     <span class="hotel_rooms_img">
                         <img src="img/hotel_room_5.png" height="350" alt="hotel_room_5"> 
@@ -98,13 +100,11 @@
                             включая просторную кровать, современную ванную комнату 
                             и удобные мебельные комплекты. </p>
                         <p>Насладитесь высоким уровнем сервиса и уютом в наших премиум номерах.</p>
-                        <select id="select2" onchange="update_all()" class="secroom" name="rooms" id="room-type">
+                        <select class="secroom" name="rooms" id="room-type">
                             <option class="optroom" value="present">Тариф с завтраком</option>
                             <option class="optroom" value="absent">Тариф без завтрака</option>
                         </select>
-                        <form id="form2" action="/booking/:<%=login%>/:2" onsubmit="return validateReservation()" method="get">
-                            <input class="about" type="submit" value="Выбрать">
-                        </form>
+                        <input class="about" type="button" value="Выбрать">
                     </div> 
                     <span class="hotel_rooms_img">
                         <img src="img/hotel_room_1.png" height="350" alt="hotel_room_1"> 
@@ -117,13 +117,11 @@
                         <p>Здесь вы найдете просторные помещения с элегантным дизайном, 
                             отдельной гостиной зоной и спальней, а также роскошной ванной комнатой.</p>
                         <p>Насладитесь приватностью и роскошью в наших люксовых номерах.</p>
-                        <select id="select3" onchange="update_all()" class="secroom" name="rooms" id="room-type">
+                        <select class="secroom" name="rooms" id="room-type">
                             <option class="optroom" value="present">Тариф с завтраком</option>
                             <option class="optroom" value="absent">Тариф без завтрака</option>
                         </select>
-                        <form id="form3" action="/booking/:<%=login%>/:3" onsubmit="return validateReservation()" method="get">
-                            <input class="about" type="submit" value="Выбрать">
-                        </form>
+                        <input class="about" type="button" value="Выбрать">
                     </div>
                     <span class="hotel_rooms_img">
                         <img src="img/hotel_room_2.png" height="350" alt="hotel_room_2"> 
@@ -137,13 +135,11 @@
                         <p>Здесь вы найдете просторное рабочее пространство, 
                             современные технологии и комфортабельную обстановку. </p>
                         <p>Насладитесь удобствами, специально разработанными для успешных деловых поездок.</p>
-                        <select id="select4" onchange="update_all()" class="secroom" name="rooms" id="room-type">
+                        <select class="secroom" name="rooms" id="room-type">
                             <option class="optroom" value="present">Тариф с завтраком</option>
                             <option class="optroom" value="absent">Тариф без завтрака</option>
                         </select>
-                        <form id="form4" action="/booking/:<%=login%>/:4" onsubmit="return validateReservation()" method="get">
-                            <input class="about" type="submit" value="Выбрать">
-                        </form>
+                        <input class="about" type="button" value="Выбрать">
                     </div>  
                     <span class="hotel_rooms_img">
                         <img src="img/hotel_room_3.png" height="350" alt="hotel_room_3"> 
@@ -156,13 +152,11 @@
                         <p>Здесь вы найдете все необходимое для приятного отдыха, 
                              включая удобную кровать, основные удобства и просторную ванную комнату.</p>
                         <p>Насладитесь уютом и функциональностью в наших эконом номерах.</p>
-                        <select id="select5" onchange="update_all()" class="secroom" name="rooms" id="room-type">
+                        <select class="secroom" name="rooms" id="room-type">
                             <option class="optroom" value="present">Тариф с завтраком</option>
                             <option class="optroom" value="absent">Тариф без завтрака</option>
                         </select>
-                        <form id="form5" action="/booking/:<%=login%>/:5" onsubmit="return validateReservation()" method="get">
-                            <input class="about" type="submit" value="Выбрать">
-                        </form>
+                        <input class="about" type="button" value="Выбрать">
                     </div>
                     <span class="hotel_rooms_img">
                         <img src="img/hotel_room_4.png" height="350" alt="hotel_room_4"> 
@@ -197,40 +191,5 @@
         </div>            
     </footer>
     <script src="script.js"></script>
-    <script>
-        
-        var check_in = document.getElementById("check-in");
-        var check_out = document.getElementById("check-out");
-        var adult = document.getElementById("room-type-adult");
-        var child = document.getElementById("room-type-child");
-        
-        function update_all()
-        {
-            for (let i = 1; i <= 5; i++)
-            {
-                var form = document.getElementById("form"+i);
-                var select = document.getElementById("select"+i);
-                let parts = form.action.split("/:");
-                form.action = parts[0] + "/:" + parts[1] + "/:" + parts[2] + "/:";
-                console.log(select.selectedIndex);
-                if (select.selectedIndex == 0)
-                    form.action += "1";
-                else form.action += "0";
-                console.log(check_in.value);
-                form.action += `/:${check_in.value}/:${check_out.value}/:${adult.value}/:${child.value}`;
-            }
-        }
-        function validateReservation()
-        {
-            let date_first = check_in.value;
-            let date_last = check_out.value;
-            let nights_count = Math.round((new Date(date_last) - new Date(date_first)) / (1000 * 60 * 60 * 24));
-            if (!nights_count || nights_count <= 0) {
-                alert("Введите корректно даты");
-                return false;
-            }
-            return true;
-        }
-    </script>
 </body>
 </html>

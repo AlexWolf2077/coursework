@@ -11,10 +11,22 @@
     <header>
         <nav class="nav">
             <img src="img/Logo_white.png" height="200" alt="Logo">
-            <a class="nav_link" href="javascript:history.back()">Назад</a>
-            <a class="nav_link" href="hotel_rooms.html">Номера</a>
-            <a class="nav_link" href="services.html">Услуги</a>         
-            <a class="nav_link" href="about_us.html">О нас</a>
+            <a class="nav_link" href="/">Главная</a>
+            <a class="nav_link" onclick="submit1()">Номера</a>
+            <a class="nav_link" onclick="submit2()">Услуги</a>            
+            <a class="nav_link" onclick="submit3()">О нас</a>
+            <form id="link_form1" method="post" action="/other:hotel_rooms" style="display:none">
+                <input type="hidden" name="login" value="<%=login%>">
+                <input type="hidden" name="password" value="<%=password%>">
+            </form>
+            <form id="link_form2" method="post" action="/other:services" style="display:none">
+                <input type="hidden" name="login" value="<%=login%>">
+                <input type="hidden" name="password" value="<%=password%>">
+            </form>
+            <form id="link_form3" method="post" action="/other:about_us" style="display:none">
+                <input type="hidden" name="login" value="<%=login%>">
+                <input type="hidden" name="password" value="<%=password%>">
+            </form>
             <a class="open-modal-btn">Вход </a>      
         </nav>
         <div class="modal-overlay">
@@ -40,26 +52,24 @@
                 <h4>Загрузить аватар</h4> <br>
                 <div class="column" id="img">
                     <input  type="file" name="image" id="image" accept="image/*"> 
-                    <img src="img/default.jpg" width="200" id="avatar" style="margin-top: 30px; clip-path: circle();">
+                    <img src=<%=path%> width="200" id="avatar" style="margin-top: 30px; clip-path: circle();">
                     <button class="upload" name="submit" onclick="show_avatar()">Загрузить</button>
                 </div>
             </li>
             <li class="prod_about">
           <div class="column">
-            <form action="/authorizated" method="post" onsubmit="return validateRegistration()">
-                <input type="text" style="float: left; clear:both;" id="LastName" name="Surname" placeholder="Фамилия" required>
-                <input type="text" style="float: left; clear:both;" id="FirstName" name="Name" placeholder="Имя" required>
-                <input type="text" style="float: left; clear:both;" id="Surname" name="Lastname" placeholder="Отчество" required>
-                <input type="tel" style="float: left; clear:both;" id="phone" name="phone" placeholder="Номер телефона" required>
-                <input type="text" style="float: left; clear:both;" maxlength="10" title="Впишите 10 цифр без пробелов между ними" id="passport" name="passport" placeholder="Серия и номер паспорта" required>
-                <input type="text" style="float: left; clear:both;" id="name" name="login" placeholder="Логин" required>
-                <input type="password" style="float: left; clear:both;" id="password" name="password" placeholder="Пароль" required>
+            <form action="/user_changed" method="post">
+                <p><p style="float: left; clear:both;">Фамилия:</p><input type="text" id="LastName" name="Surname" placeholder="Фамилия" value=<%=surname%> style="float:right;" required></p>
+                <p><p style="float: left; clear:both;">Имя:</p><input type="text" id="FirstName" name="Name" placeholder="Имя" value=<%=name%> style="float:right;" required></p>
+                <p><p style="float: left; clear:both;">Отчество:</p><input type="text" id="Surname" name="Lastname" placeholder="Отчество" value=<%=lastname%> style="float:right;" required></p>
+                <p><p style="float: left; clear:both;">Телефон:</p><input type="text" id="phone" name="phone" placeholder="Номер телефона" value=<%=phone%> style="float:right;" required></p>
+                <p><p style="float: left; clear:both;">Серия и номер паспорта:&nbsp;&nbsp;&nbsp;&nbsp;</p><input type="text"  title="Впишите 10 цифр без пробелов между ними" id="passport" name="passport" placeholder="Серия и номер паспорта" value=<%=passport%> style="float:right;" required></p>
+                <p><p style="float: left; clear:both;">Логин:</p><input type="text" id="name" name="login" placeholder="Логин" value=<%=login%> style="float:right;" required></p>
+                <p><p style="float: left; clear:both;">Пароль:</p><input type="text" id="password" name="password" placeholder="Пароль" value=<%=password%> style="float:right;" required></p>
                 <input type="hidden" id="url" name="url" required>
                 <br><br>
-                <input style="float: left; margin-top: 30px;" class="Registration" type="submit" value=" Зарегистрироваться ">
-            </form>
-            <input type="hidden" id=<%=error%>> 
-            <p id="error_message" style="color: red;"></p> 
+                <input style="margin-top: 30px;" class="Registration" type="submit" value=" Изменить ">
+            </form> 
           </div>
         </li>
     </ul>
@@ -111,11 +121,7 @@
             // you have to declare the file loading
             reader.readAsDataURL(file);
         }
-        if (document.getElementById("error"))
-        {
-            document.getElementById("error_message").innerHTML = "Логин занят! Используйте другой";
-        }
-        else document.getElementById("error_message").innerHTML = "";
+        
 
     </script>
 </body>

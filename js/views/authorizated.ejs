@@ -4,25 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hard Rock Hotel</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<%=dirname%>css/normalize.css">
+    <link rel="stylesheet" href="<%=dirname%>css/style.css">
 </head>
 <body>
     <header>
         <nav class="nav">
-            <img src="/img/Logo_white.png" height="200" alt="Logo">
-            <a class="nav_link_active" href="/">Главная</a>
-            <a class="nav_link" href="hotel_rooms.html">Номера</a>
-            <a class="nav_link" href="services.html">Услуги</a>            
-            <a class="nav_link" href="about_us.html">О нас</a>
+            <img src="<%=dirname%>img/Logo_white.png" height="200" alt="Logo">
+            <form id="link_form1" method="post" action="/other:hotel_rooms" style="display:none">
+                <input type="hidden" name="login" value="<%=login%>">
+                <input type="hidden" name="password" value="<%=password%>">
+            </form>
+            <form id="link_form2" method="post" action="/other:services" style="display:none">
+                <input type="hidden" name="login" value="<%=login%>">
+                <input type="hidden" name="password" value="<%=password%>">
+            </form>
+            <form id="link_form3" method="post" action="/other:about_us" style="display:none">
+                <input type="hidden" name="login" value="<%=login%>">
+                <input type="hidden" name="password" value="<%=password%>">
+            </form>
+            <a class="nav_link_active" href ="#">Главная</a>
+            <a class="nav_link" onclick="submit1()">Номера</a>
+            <a class="nav_link" onclick="submit2()">Услуги</a>            
+            <a class="nav_link" onclick="submit3()">О нас</a>
             <a><div class="bubble" id="bubble" onmouseover="profile_over()" onmouseleave="profile_leave()" style="padding:20px;"><p id="bubbleText" style="color: #CEC2A8;"><%=login%>&nbsp;&nbsp;&nbsp;&nbsp;</p><<%=img_part%> height="100" style="clip-path: circle();" id="avatar_img"> </div></a>          
         </nav>
         <div class="nav">
             <h1>Красота и комфорт <br>
                 Уютно, как дома</h1>
-                <input class="reservation" type="button" value=" Забронировать ">
+                <form action="/reservation:<%=login%>" method="get">
+                    <input class="reservation" type="submit" value=" Забронировать ">
+                </form>
+                
                 <dialog onmouseover="dialog_over()" onmouseleave="dialog_leave()" id="dialog" style="margin-left:75%; background: #433A28; width: 300px; opacity: 0;" open><nav class="nav"><a id="edit_link" class="nav_link" href="/profile:<%=login%>">Редактировать профиль</a></nav><br>
                     <nav class="nav"><a id="edit_link" class="nav_link" href="/delete:<%=login%>">Удалить аккаунт</a></nav><br>
+                    <nav class="nav"><a id="edit_link" class="nav_link" href="/records/:<%=login%>/:0">Мои брони</a></nav>&nbsp;
                     <nav class="nav"><a id="exit_link" class="nav_link" href="/">Выйти</a></nav>
                 </dialog>
         </div>        
@@ -45,13 +61,13 @@
     </header>
     <main>
         <div class="Greetings">
-            <img src="img/Greetings.png" alt="Greetings">
+            <img src="<%=dirname%>img/Greetings.png" alt="Greetings">
         </div>
         <div class="depiction">
-            <img src="img/icon_drinks.png" alt="drinks"><p>Приветственные <br> напитки</p>
-            <img src="img/icon_cars.png" alt="cars"><p>Аренда машины</p>
-            <img src="img/icon_resort.png" alt="resort"><p>Курорт и Спа</p>
-            <img src="img/icon_wifi.png" alt="wifi"><p>Бесплатный <br> WIFI</p>
+            <img src="<%=dirname%>img/icon_drinks.png" alt="drinks"><p>Приветственные <br> напитки</p>
+            <img src="<%=dirname%>img/icon_cars.png" alt="cars"><p>Аренда машины</p>
+            <img src="<%=dirname%>img/icon_resort.png" alt="resort"><p>Курорт и Спа</p>
+            <img src="<%=dirname%>img/icon_wifi.png" alt="wifi"><p>Бесплатный <br> WIFI</p>
         </div>
         <section class="Stay_here">
             <div class="ztitle">
@@ -63,7 +79,7 @@
                 <h4 class="center">Располагайтесь с удовольствием</h4>
             <div class="wide_container">
                 <div class="img">
-                    <img src="img/hotel_room.png" height="600" alt="hotel_room">
+                    <img src="<%=dirname%>img/hotel_room.png" height="600" alt="hotel_room">
                 </div>
                 <div class="text_cabinets">
                     <ul class="technologies">
@@ -91,19 +107,19 @@
             </div>
             <ul class="produce_frame_top">
                 <li class="produce_about">
-                    <img src="/img/hotel_room_1.png" height="250" alt="hotel_room_1" >
+                    <img src="<%=dirname%>img/hotel_room_1.png" height="250" alt="hotel_room_1" >
                     <h4 class="center">Премиум <br> Номер с прекрасным видом</h4>
                 </li>
                 <li class="produce_about">
-                   <img src="img/hotel_room_2.png" height="250" alt="hotel_room_2" >
+                   <img src="<%=dirname%>img/hotel_room_2.png" height="250" alt="hotel_room_2" >
                    <h4 class="center">Люкс <br> Роскошный номер</h4>
                 </li>
                 <li class="produce_about">
-                  <img src="img/hotel_room_3.png" height="250" alt="hotel_room_3" >
+                  <img src="<%=dirname%>img/hotel_room_3.png" height="250" alt="hotel_room_3" >
                   <h4 class="center">Бизнес класс <br> Стандартный</h4> 
                 </li>
                 <li class="produce_about">
-                   <img src="img/hotel_room_4.png" height="250" alt="hotel_room_4" >
+                   <img src="<%=dirname%>img/hotel_room_4.png" height="250" alt="hotel_room_4" >
                    <h4 class="center">Минимализм <br> Эконом вариант</h4> 
                 </li>
             </ul>
@@ -120,7 +136,7 @@
                         <input class="about" type="button" value="Узнать больше" onclick="redirectToAboutPage()">
                 </div>
                 <div>
-                    <img src="img/restaurant.png" alt="restaurant"> 
+                    <img src="<%=dirname%>img/restaurant.png" alt="restaurant"> 
                 </div>                                  
             </div>
         </section>
@@ -129,7 +145,7 @@
                 <li class="prod_about">
                     <h4>ОТЛИЧНЫЕ <br>
                         НОМЕРА И ИНТЕРЬЕР</h4>
-                    <img src="img/stars.png"  width="160" alt="stars" >
+                    <img src="<%=dirname%>img/stars.png"  width="160" alt="stars" >
                 </li>
                 <li class="prod_about"> 
                     <h4 p class="center">Обратная связь</h4>
@@ -141,7 +157,7 @@
                           </div>
                 </li>                
                 <li class="prod_about">
-                  <img src="img/People.png"  alt="People" >
+                  <img src="<%=dirname%>img/People.png"  alt="People" >
                   <p>Люди отлично отзываются об отдыхе<br>
                     в нашем отеле мечты</p>
                 </li>           
@@ -149,7 +165,7 @@
         <section>
             <ul class="produce_frame_too">
                 <li class="produce_about">
-                    <img src="img/icon_inform_1.png" height="60" width="60" alt="icon_inform_1" >
+                    <img src="<%=dirname%>img/icon_inform_1.png" height="60" width="60" alt="icon_inform_1" >
                     <h4 class="center">РЕСТОРАН</h4>
                     <p>Уютный интерьер и изысканная кухня 
                         сделают ваш обед или ужин незабываемым. <br>
@@ -157,7 +173,7 @@
                         их приятно удивить.</p>
                 </li>
                 <li class="produce_about">
-                   <img src="img/icon_inform_2.png" height="60" width="60" alt="icon_inform_2" >
+                   <img src="<%=dirname%>img/icon_inform_2.png" height="60" width="60" alt="icon_inform_2" >
                    <h4 class="center">СПА-КОМПЛЕКС</h4>
                    <p>Прекрасное место, <br>
                     чтобы наслаждаться каждым моментом,
@@ -167,7 +183,7 @@
                      миром и самим собой.</p>
                 </li>
                 <li class="produce_about">
-                  <img src="img/icon_inform_3.png" height="60" width="60" alt="icon_inform_3" >
+                  <img src="<%=dirname%>img/icon_inform_3.png" height="60" width="60" alt="icon_inform_3" >
                   <h4 class="center">ЛУЧШИЕ НОМЕРА</h4> 
                   <p> Уникальный опыт проживания, <br>
                     который сочетает в себе комфорт, <br>
@@ -180,7 +196,7 @@
                     > ванной комнатой</p>
                 </li>
                 <li class="produce_about">
-                   <img src="img/icon_inform_4.png" height="60" width="60" alt="icon_inform_4" >
+                   <img src="<%=dirname%>img/icon_inform_4.png" height="60" width="60" alt="icon_inform_4" >
                    <h4 class="center">ЛАУНЖ-БАР</h4> 
                    <p>Служит полноценной зоной отдыха, 
                     отделенной и изолированной <br>
@@ -209,11 +225,28 @@
             </div>            
         </div>
         <div class="right">
-            <a href="#"><img src="img/icon_Twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="img/icon_Facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="img/icon_YouTube.png" alt="YouTube"></a>
+            <a href="#"><img src="<%=dirname%>img/icon_Twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="<%=dirname%>img/icon_Facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="<%=dirname%>img/icon_YouTube.png" alt="YouTube"></a>
         </div>            
     </footer>
-    <script src="script.js"></script>
+    <script src="<%=dirname%>script.js"></script>
+    <script>
+        function submit1()
+        {
+            var form = document.getElementById("link_form1");
+            form.submit();
+        }
+        function submit2()
+        {
+            var form = document.getElementById("link_form2");
+            form.submit();
+        }
+        function submit3()
+        {
+            var form = document.getElementById("link_form3");
+            form.submit();
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="<%=dirname%>css/normalize.css">
+    <link rel="stylesheet" href="<%=dirname%>css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <img src="<%=dirname%>img/Logo_white.png" height="200" alt="Logo">
+            <a href="/" class="nav_link">Главная</a>
+            <a class="nav_link" href="hotel_rooms.html">Номера</a>
+            <a class="nav_link" href="services.html">Услуги</a>         
+            <a class="nav_link" href="about_us.html">О нас</a>
+            <a><div class="bubble" id="bubble" onmouseover="profile_over()" onmouseleave="profile_leave()" style="padding:20px;"><p id="bubbleText" style="color: #CEC2A8;"><%=login%>&nbsp;&nbsp;&nbsp;&nbsp;</p><<%=img_part%> height="100" style="clip-path: circle();" id="avatar_img"> </div></a>        
+        </nav>
+        <div class="nav">
+            <h1>Красота и комфорт <br>
+                Уютно, как дома</h1>
+                <form action="/reservation:<%=login%>" method="get">
+                    <input class="reservation" type="submit" value=" Забронировать ">
+                </form>
+                
+                <dialog onmouseover="dialog_over()" onmouseleave="dialog_leave()" id="dialog" style="margin-left:75%; background: #433A28; width: 300px; opacity: 0;" open>
+                    <nav class="nav"><a id="edit_link" class="nav_link" href="/profile:<%=login%>">Редактировать профиль</a></nav>&nbsp;
+                    <nav class="nav"><a id="edit_link" class="nav_link" href="/delete:<%=login%>">Удалить аккаунт</a></nav>&nbsp;
+                    <nav class="nav"><a id="edit_link" class="nav_link" href="/records/:<%=login%>/:0">Мои брони</a></nav>&nbsp;
+                    <nav class="nav"><a id="exit_link" class="nav_link" href="/">Выйти</a></nav>
+                </dialog>
+        </div> 
+        <div class="modal-overlay">
+            <div class="modal">
+                <h4>Нет аккаунта? </h4>  
+                <a class="register" href="registration.html">Зарегистрируйся!</a>   &nbsp;                       
+              <form id="contact-form">
+                <div>
+                  <input type="pass" id="name" placeholder="Логин" required>
+                </div>
+                <div>
+                  <input type="pass" id="password" placeholder="Пароль" required>
+                </div>
+                <button type="submit">Войти</button>
+              </form>
+              <button class="close-modal-btn">&#10006;</button>
+            </div>
+          </div>
+    </header>
+    <main>        
+        <li class="reser">
+            <section class="container">
+                <h4>Условия проживания и оплаты</h4>
+                <div class="two-lists">
+                    <ul class="list1">
+                        <li>Дата заезда:</li>
+                        <li>Дата выезда:</li>
+                        <li>Ночей:</li>
+                        <li>Взрослые:</li>
+                        <li>Дети:</li>
+                        <li>Номер:</li>
+                        <li>Тариф:</li>
+                        <li>Стоимость за ночь:</li>
+                        <li>Полная стоимость:</li>
+                    </ul>
+                    <ul class="list2">
+                        <li><%=date_first%></li>
+                        <li><%=date_last%></li>
+                        <li><%=nights_count%></li>
+                        <li><%=adults_count%></li>
+                        <li><%=children_count%></li>
+                        <li><%=room%></li>
+                        <li><%=rate%></li>
+                        <li><%=price%> руб</li>
+                        <li><%=full_price%> руб</li>
+                    </ul>
+                </div>
+                <form id="book_form" action="/booked/:<%=login%>/:<%=room_id%>/:<%=rate_bool%>/:<%=date_first.replace('/', '-')%>/:<%=date_last.replace('/', '-')%>" method="post">
+                    <input type="submit" value="Создать бронь" class="Registration">
+                </form>
+                <br><br>
+            </section>
+                </div>
+            </div>
+        </li>
+        </ul>
+    </div>
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <a class="nav_link" href="index.html">Главная</a>
+                <a class="nav_link" href="hotel_rooms.html">Номера</a>
+                <a class="nav_link" href="services.html">Услуги</a>            
+                <a class="nav_link" href="about_us.html">О нас</a>          
+            </div>
+            <div  class="footer-i">
+                <a class="nav_link" href="#">Политика конфиденциальности</a>            
+                <a class="nav_link" href="#">Юридические договоры</a>
+                <a class="nav_link" href="#">Часто задаваемые вопросы</a> 
+            </div>
+            <div>
+                <p> © Все права защищены</p>
+            </div>            
+        </div>
+        <div class="right">
+            <a href="#"><img src="<%=dirname%>img/icon_Twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="<%=dirname%>img/icon_Facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="<%=dirname%>img/icon_YouTube.png" alt="YouTube"></a>
+        </div>            
+    </footer>
+    <script src="<%=dirname%>script.js"></script>
+    <script>
+    </script>
+</body>
+</html>

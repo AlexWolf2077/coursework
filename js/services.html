@@ -11,14 +11,16 @@
     <header>
         <nav class="nav">
             <img src="img/Logo_white.png" height="200" alt="Logo">
-            <a class="nav_link" href="javascript:history.back()">Назад</a>           
+            <a class="nav_link" href="/">Главная</a>
+            <a class="nav_link" href="hotel_rooms.html">Номера</a>
+            <a class="nav_link_active" href="services.html">Услуги</a>         
+            <a class="nav_link" href="about_us.html">О нас</a>
+            <a class="open-modal-btn">Вход /<br>Регистрация</a>         
         </nav>
         <div class="nav">
             <h1>Красота и комфорт <br>
                 Уютно, как дома</h1>
-                <form action="/reservation:<%=login%>" method="get">
-                    <input class="reservation" type="submit" value=" Забронировать ">
-                </form>
+                <input class="reservation" type="button" value=" Забронировать ">
         </div>        
         <div class="modal-overlay">
             <div class="modal">
@@ -175,6 +177,6 @@
             <a href="#"><img src="img/icon_YouTube.png" alt="YouTube"></a>
         </div>            
     </footer>
-    <script src="<%=dirname%>script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

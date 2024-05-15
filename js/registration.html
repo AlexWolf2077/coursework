@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <img src="img/Logo_white.png" height="200" alt="Logo">
+            <a class="nav_link" href="/">Главная</a>
+            <a class="nav_link" href="hotel_rooms.html">Номера</a>
+            <a class="nav_link" href="services.html">Услуги</a>         
+            <a class="nav_link" href="about_us.html">О нас</a>
+            <a class="open-modal-btn">Вход </a>      
+        </nav>
+        <div class="modal-overlay">
+            <div class="modal">
+                <br>  <br>                       
+              <form id="contact-form">
+                <div>
+                  <input type="pass" id="name" placeholder="Логин" required>
+                </div>
+                <div>
+                  <input type="pass" id="password" placeholder="Пароль" required>
+                </div>
+                <button type="submit">Войти</button>
+              </form>
+              <button class="close-modal-btn">&#10006;</button>
+            </div>
+          </div>
+    </header>
+    <main>
+        <br>
+        <ul class="prod_frame_top">
+            <li class="prod_about">
+                <h4>Загрузить аватар</h4> <br>
+                <form action="upload.php" method="post" enctype="multipart/form-data">
+                    <div class="column">
+                    <input  type="file" name="image" accept="image/*"> 
+                    <button class="upload" type="submit" name="submit">Загрузить</button>
+                </div>
+                </form>
+            </li>
+            <li class="prod_about">
+          <div class="column">
+            <input type="text" id="LastName" placeholder="Фамилия" required>
+            <input type="text" id="FirstName" placeholder="Имя" required>
+            <input type="text" id="Surname" placeholder="Отчество" required>
+            <input type="text" id="phone" placeholder="Номер телефона" required>
+            <input type="text" id="passport" placeholder="Серия и номер паспорта" required>
+            <input type="text" id="name" placeholder="Логин" required>
+            <input type="text" id="password" placeholder="Пароль" required>            
+          </div>
+        </li>
+    </ul>
+        <div class="center">
+            <input class="Registration" type="button" value=" Зарегистрироваться ">
+        </div> <br><br>
+                    <div>
+                    <p class="inform">Контактная информация: <br>
+                        Адрес: ул. Музыкальная, 123, Город <br>
+                        Телефон: +7 (XXX) XXX-XXXX <br>
+                        Электронная почта: info@hardrockhotel.com</p>
+                    </div>
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <a class="nav_link" href="index.html">Главная</a>
+                <a class="nav_link" href="hotel_rooms.html">Номера</a>
+                <a class="nav_link" href="services.html">Услуги</a>            
+                <a class="nav_link" href="about_us.html">О нас</a>          
+            </div>
+            <div  class="footer-i">
+                <a class="nav_link" href="#">Политика конфиденциальности</a>            
+                <a class="nav_link" href="#">Юридические договоры</a>
+                <a class="nav_link" href="#">Часто задаваемые вопросы</a> 
+            </div>
+            <div>
+                <p> © Все права защищены</p>
+            </div>            
+        </div>
+        <div class="right">
+            <a href="#"><img src="img/icon_Twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="img/icon_Facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="img/icon_YouTube.png" alt="YouTube"></a>
+        </div>            
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

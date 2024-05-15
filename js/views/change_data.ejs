@@ -11,11 +11,22 @@
     <header>
         <nav class="nav">
             <img src="img/Logo_white.png" height="200" alt="Logo">
-            <a class="nav_link" href="/">Главная</a>
-            <a class="nav_link" href="hotel_rooms.html">Номера</a>
-            <a class="nav_link" href="services.html">Услуги</a>         
-            <a class="nav_link" href="about_us.html">О нас</a>
-            <a class="open-modal-btn">Вход </a>      
+            <form id="link_form1" method="post" action="/other:hotel_rooms" style="display:none">
+                <input type="hidden" value="<%=login%>">
+                <input type="hidden" value="<%=password%>">
+            </form>
+            <form id="link_form2" method="post" action="/other:services" style="display:none">
+                <input type="hidden" value="<%=login%>">
+                <input type="hidden" value="<%=password%>">
+            </form>
+            <form id="link_form3" method="post" action="/other:about_us" style="display:none">
+                <input type="hidden" value="<%=login%>">
+                <input type="hidden" value="<%=password%>">
+            </form>
+            <a class="nav_link_active" href="javascript:history.back()">Главная</a>
+            <a class="nav_link" onclick="submit1()">Номера</a>
+            <a class="nav_link" onclick="submit2()">Услуги</a>            
+            <a class="nav_link" onclick="submit3()">О нас</a>   
         </nav>
         <div class="modal-overlay">
             <div class="modal">
@@ -109,8 +120,21 @@
             // you have to declare the file loading
             reader.readAsDataURL(file);
         }
-        
-
+        function submit1()
+        {
+            var form = document.getElementById("link_form1");
+            form.submit();
+        }
+        function submit2()
+        {
+            var form = document.getElementById("link_form2");
+            form.submit();
+        }
+        function submit3()
+        {
+            var form = document.getElementById("link_form3");
+            form.submit();
+        }
     </script>
 </body>
 </html>

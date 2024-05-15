@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="<%=dirname%>css/normalize.css">
+    <link rel="stylesheet" href="<%=dirname%>css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <img src="<%=dirname%>img/Logo_white.png" height="200" alt="Logo">
+            <a class="nav_link" href="/">Главная</a>
+            <a class="nav_link" onclick="submit1()">Номера</a>
+            <a class="nav_link" onclick="submit2()">Услуги</a>            
+            <a class="nav_link" onclick="submit3()">О нас</a>
+            <form id="link_form1" method="post" action="/other:hotel_rooms" style="display:none">
+                <input type="hidden" name="login" value="<%=login%>">
+                <input type="hidden" name="password" value="<%=password%>">
+            </form>
+            <form id="link_form2" method="post" action="/other:services" style="display:none">
+                <input type="hidden" name="login" value="<%=login%>">
+                <input type="hidden" name="password" value="<%=password%>">
+            </form>
+            <form id="link_form3" method="post" action="/other:about_us" style="display:none">
+                <input type="hidden" name="login" value="<%=login%>">
+                <input type="hidden" name="password" value="<%=password%>">
+            </form>
+            <a><div class="bubble" id="bubble" onmouseover="profile_over()" onmouseleave="profile_leave()" style="padding:20px;"><p id="bubbleText" style="color: #CEC2A8;"><%=login%>&nbsp;&nbsp;&nbsp;&nbsp;</p><<%=img_part%> height="100" style="clip-path: circle();" id="avatar_img"> </div></a>        
+        </nav>
+        <div class="nav">
+            <h1>Красота и комфорт <br>
+                Уютно, как дома</h1>
+                <form action="/reservation:<%=login%>" method="get">
+                    <input class="reservation" type="submit" value=" Забронировать ">
+                </form>
+                
+                <dialog onmouseover="dialog_over()" onmouseleave="dialog_leave()" id="dialog" style="margin-left:75%; background: #433A28; width: 300px; opacity: 0;" open>
+                    <nav class="nav"><a id="edit_link" class="nav_link" href="/profile:<%=login%>">Редактировать профиль</a></nav>&nbsp;
+                    <nav class="nav"><a id="edit_link" class="nav_link" href="/delete:<%=login%>">Удалить аккаунт</a></nav>&nbsp;
+                    <nav class="nav"><a id="edit_link" class="nav_link" href="/records/:<%=login%>/:0">Мои брони</a></nav>&nbsp;
+                    <nav class="nav"><a id="exit_link" class="nav_link" href="/">Выйти</a></nav>
+                </dialog>
+        </div> 
+        <div class="modal-overlay">
+            <div class="modal">
+                <h4>Нет аккаунта? </h4>  
+                <a class="register" href="registration.html">Зарегистрируйся!</a>   &nbsp;                       
+              <form id="contact-form">
+                <div>
+                  <input type="pass" id="name" placeholder="Логин" required>
+                </div>
+                <div>
+                  <input type="pass" id="password" placeholder="Пароль" required>
+                </div>
+                <button type="submit">Войти</button>
+              </form>
+              <button class="close-modal-btn">&#10006;</button>
+            </div>
+          </div>
+    </header>
+    <main>
+        <div class="container2">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <th>Номер&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <th>Тариф&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <th>Цена за ночь&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <th>Дата заезда</th>
+                        <th>Дата выезда</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                
+                    <% records.forEach ((rec) => { %>
+                    <tbody>
+                    <tr>
+                        <td><%=rec[0]%></td>
+                        <td><select onchange="update_all();" id="room-select<%=rec[0]%>">
+                            <option value="1">Президентский</option>
+                            <option value="2">Премиум</option>
+                            <option value="3">Люкс</option>
+                            <option value="4">Бизнес-класс</option>
+                            <option value="5">Минимализм</option>
+                          </select></td>
+                          <td><select onchange="update_all();" id="tariff-select<%=rec[0]%>">
+                            <option value="1">Тариф с завтраком</option>
+                            <option value="2">Тариф без завтрака</option>
+                          </select></td>
+                          <input type="hidden" id="room-value<%=rec[0]%>" value="<%=rec[1]%>">
+                          <input type="hidden" id="tariff-value<%=rec[0]%>" value="<%=rec[2]%>">
+                        <td><%=rec[3]%></td>
+                        <td><input oninput="update_all();" id="first_date<%=rec[0]%>" type="date" name="check-in"  class="checkinp" id="check-in" value="<%=rec[5]%>"></td>
+                        <td><input oninput="update_all();" id="last_date<%=rec[0]%>" type="date" name="check-in"  class="checkinp" id="check-in" value="<%=rec[6]%>"></td>
+                        <td><form id="submit_changes<%=rec[0]%>" action="/change_record_user/:<%=login%>/:<%=rec[4]%>/:<%=["Президентский", "Премиум", "Люкс", "Бизнес-класс", "Минимализм"].indexOf(rec[1])+1%>/:<%=["Тариф без завтрака", "Тариф с завтраком"].indexOf(rec[2])%>/:<%=rec[5].replace("/", "-")%>/:<%=rec[6].replace("/", "-")%>" method="post">
+                            <input type="submit" value="Сохранить">
+                        </form>/
+                        <a href="/records/:<%=login%>/:<%=rec[4]%>">Удалить</a>
+                    </tr>
+                    </tbody>
+                    <% }) %>
+            </table>
+        </div>       
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <a class="nav_link" href="index.html">Главная</a>
+                <a class="nav_link" href="hotel_rooms.html">Номера</a>
+                <a class="nav_link" href="services.html">Услуги</a>            
+                <a class="nav_link" href="about_us.html">О нас</a>          
+            </div>
+            <div  class="footer-i">
+                <a class="nav_link" href="#">Политика конфиденциальности</a>            
+                <a class="nav_link" href="#">Юридические договоры</a>
+                <a class="nav_link" href="#">Часто задаваемые вопросы</a> 
+            </div>
+            <div>
+                <p> © Все права защищены</p>
+            </div>            
+        </div>
+        <div class="right">
+            <a href="#"><img src="<%=dirname%>img/icon_Twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="<%=dirname%>img/icon_Facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="<%=dirname%>img/icon_YouTube.png" alt="YouTube"></a>
+        </div>            
+    </footer>
+    <script src="<%=dirname%>script.js"></script>
+    <script>
+        function update_all()
+        {
+            console.log(890);
+            let i = 1;
+            while (true)
+            {
+                var form = document.getElementById("submit_changes"+i);
+                var selectRoom = document.getElementById("room-select"+i);
+                if (!selectRoom)
+                    break;
+                var selectRate = document.getElementById("tariff-select"+i);
+                var inp1 = document.getElementById("first_date"+i).value;
+                var inp2 = document.getElementById("last_date"+i).value;
+                var parts = form.action.split("/:");
+                let selectedRoom;
+                let j = 1;
+                for (const option of selectRoom.options)
+                {
+                    if (option.selected)
+                    {
+                        selectedRoom = j;
+                        break;
+                    }
+                    j++;
+                }
+                let selectedRate;
+                if (selectRate.options[0].selected)
+                {
+                    selectedRate = 1;
+                }
+                else selectedRate = 0;
+                form.action = parts[0] + "/:" + parts[1] + "/:" + parts[2] + "/:" + selectedRoom + "/:" + selectedRate + "/:" + inp1.replace("/", "-") + "/:" + inp2.replace("/", "-");
+                i++;
+            }
+        }
+        i = 1;
+        while (true)
+        {
+            
+            var selectRoom = document.getElementById("room-select"+i);
+            if (!selectRoom)
+                break;
+            var selectRate = document.getElementById("tariff-select"+i);
+            var room = document.getElementById("room-value"+i).value;
+            var tariff = document.getElementById("tariff-value"+i).value;
+            
+            for (const option of selectRoom.options)
+        {
+            console.log(option.label, room);
+            if (option.label == room)
+            {
+                option.selected = "selected";
+            }
+        }
+        for (const option of selectRate.options)
+        {
+            console.log(option.label, tariff);
+            if (option.label == tariff)
+            {
+                console.log(option.selected);
+                option.selected = "selected";
+            }
+        }
+        i++;
+        }
+        function submit1()
+        {
+            var form = document.getElementById("link_form1");
+            form.submit();
+        }
+        function submit2()
+        {
+            var form = document.getElementById("link_form2");
+            form.submit();
+        }
+        function submit3()
+        {
+            var form = document.getElementById("link_form3");
+            form.submit();
+        }
+    </script>
+</body>
+</html>

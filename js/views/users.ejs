@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="<%=dirname%>css/normalize.css">
+    <link rel="stylesheet" href="<%=dirname%>css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <img src="<%=dirname%>img/Logo_white.png" height="200" alt="Logo">
+            <a class="nav_link" href="/">Главная</a>
+            <a class="nav_link" href="hotel_rooms.html">Номера</a>
+            <a class="nav_link" href="services.html">Услуги</a>         
+            <a class="nav_link" href="about_us.html">О нас</a>
+            <a class="nav_link" href="/">Выйти</a>
+        </nav>
+        <div class="nav">
+            <h1>Красота и комфорт <br>
+                Уютно, как дома</h1>
+        </div> 
+        <div class="modal-overlay">
+            <div class="modal">
+                <h4>Нет аккаунта? </h4>  
+                <a class="register" href="registration.html">Зарегистрируйся!</a>   &nbsp;                       
+              <form id="contact-form">
+                <div>
+                  <input type="pass" id="name" placeholder="Логин" required>
+                </div>
+                <div>
+                  <input type="pass" id="password" placeholder="Пароль" required>
+                </div>
+                <button type="submit">Войти</button>
+              </form>
+              <button class="close-modal-btn">&#10006;</button>
+            </div>
+          </div>
+    </header>
+    <main>
+        <div class="container2">
+        <table>
+            
+                <% users.forEach ((user) => { %>
+                <tbody style="border: 1px solid black; background-color: #CEC2A8;">
+                <tr>
+                    <td style="border: none;"><h4><%=user.login%></h4></td>
+                    <td style="border: none;"><img src="/avatars/<%=user.login%>.jpg" height="100" style="clip-path: circle();" id="avatar_img"></td>
+                    <td style="border: none; width: 250px;"><form method="post" action="/admin_change_user:<%=user.login%>"> <input class="Registration" type="submit" value="Редактировать профиль"></form></td>
+                    <td style="border: none;"><form method="post" action="/admin_delete_user:<%=user.login%>"><input class="Registration" type="submit" value="Удалить аккаунт"></form></td>
+                </tr>
+                </tbody>
+                <% }) %>
+        </table>
+        </div>       
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <a class="nav_link" href="index.html">Главная</a>
+                <a class="nav_link" href="hotel_rooms.html">Номера</a>
+                <a class="nav_link" href="services.html">Услуги</a>            
+                <a class="nav_link" href="about_us.html">О нас</a>          
+            </div>
+            <div  class="footer-i">
+                <a class="nav_link" href="#">Политика конфиденциальности</a>            
+                <a class="nav_link" href="#">Юридические договоры</a>
+                <a class="nav_link" href="#">Часто задаваемые вопросы</a> 
+            </div>
+            <div>
+                <p> © Все права защищены</p>
+            </div>            
+        </div>
+        <div class="right">
+            <a href="#"><img src="<%=dirname%>img/icon_Twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="<%=dirname%>img/icon_Facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="<%=dirname%>img/icon_YouTube.png" alt="YouTube"></a>
+        </div>            
+    </footer>
+    <script src="<%=dirname%>script.js"></script>
+    <script>
+        
+        function update_all()
+        {
+            console.log(890);
+            let i = 1;
+            while (true)
+            {
+                var form = document.getElementById("submit_changes"+i);
+                var selectRoom = document.getElementById("room-select"+i);
+                if (!selectRoom)
+                    break;
+                var selectRate = document.getElementById("tariff-select"+i);
+                var inp1 = document.getElementById("first_date"+i).value;
+                var inp2 = document.getElementById("last_date"+i).value;
+                var parts = form.action.split("/:");
+                let selectedRoom;
+                let j = 1;
+                for (const option of selectRoom.options)
+                {
+                    if (option.selected)
+                    {
+                        selectedRoom = j;
+                        break;
+                    }
+                    j++;
+                }
+                let selectedRate;
+                if (selectRate.options[0].selected)
+                {
+                    selectedRate = 1;
+                }
+                else selectedRate = 0;
+                form.action = parts[0] + "/:" + parts[1] + "/:" + parts[2] + "/:" + selectedRoom + "/:" + selectedRate + "/:" + inp1.replace("/", "-") + "/:" + inp2.replace("/", "-");
+                i++;
+            }
+        }
+        i = 1;
+        while (true)
+        {
+            
+            var selectRoom = document.getElementById("room-select"+i);
+            if (!selectRoom)
+                break;
+            var selectRate = document.getElementById("tariff-select"+i);
+            var room = document.getElementById("room-value"+i).value;
+            var tariff = document.getElementById("tariff-value"+i).value;
+            
+            for (const option of selectRoom.options)
+        {
+            console.log(option.label, room);
+            if (option.label == room)
+            {
+                option.selected = "selected";
+            }
+        }
+        for (const option of selectRate.options)
+        {
+            console.log(option.label, tariff);
+            if (option.label == tariff)
+            {
+                console.log(option.selected);
+                option.selected = "selected";
+            }
+        }
+        i++;
+        }
+        
+    </script>
+</body>
+</html>
